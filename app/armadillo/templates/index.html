@@ -3,17 +3,28 @@
 <html lang="en">
 <head>
   {% include 'shared/head.html' %}
+  <script src="{% static "js/aframe.min.js" %}"></script>
+  <script src="{% static "js/aframe-ar.js" %}"></script>
 </head>
 <body class=index>
   <div class="container-fluid header">
     {% include 'shared/nav.html' %}
   </div>
 
-  <div class="container-fluid mt-3 ">
-    <div class="col text-center">
-      <h1>Armadillo<h1/>
-    </div>
-  </div>
+  <a-scene embedded arjs='trackingMethod: best; debugUIEnabled:false'>
+    <a-assets>
+      <a-asset-item id="tree-model" src="https://raw.githubusercontent.com/TimVanMourik/ChristmasAR/master/data/Tree.dae" crossOrigin="anonymous"></a-asset-item>
+      <a-asset-item id="text-model" src="https://raw.githubusercontent.com/TimVanMourik/ChristmasAR/master/data/MerryChristmas.dae" crossOrigin="anonymous"></a-asset-item>
+    </a-assets>
+      <a-anchor hit-testing-enabled='true'>
+        <a-collada-model src="#tree-model"  position="0 0 0" scale="1 1 1" rotation="0 0 0">
+      </a-collada-model>
+      <a-collada-model src="#text-model"  position="0 0 0" scale="1 1 1">
+      <a-animation attribute="rotation" to="0 360 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
+      </a-collada-model>
+      </a-anchor>
+    <a-camera-static/>
+  </a-scene>
 
   {% include 'shared/footer.html' %}
 </body>
