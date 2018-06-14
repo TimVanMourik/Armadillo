@@ -52,9 +52,10 @@ def fs_to_dae( args ):
 
   input_list.addInput(0, 'VERTEX', "#cubeverts-array")
   input_list.addInput(1, 'NORMAL', "#cubenormals-array")
+  #index_array = np.array(range(0,((verts.shape[0]//3) * 2)))
 
   #creates faces
-  triset = geom.createTriangleSet(faces, input_list, "materialref")
+  triset = geom.createTriangleSet(np.array(range(0,len(norms))), input_list, "materialref")
 
   geom.primitives.append(triset)
   mesh.geometries.append(geom)
