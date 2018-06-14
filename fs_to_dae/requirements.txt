@@ -1,0 +1,6 @@
+nibabel
+pycollada
+numpy
+
+
+
