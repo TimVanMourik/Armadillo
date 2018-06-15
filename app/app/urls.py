@@ -23,6 +23,7 @@ import armadillo.views
 app_name = 'app'
 
 urlpatterns = [
-    url(r'^$',           armadillo.views.index,       name='index'),
-    url(r'^admin/?',     admin.site.urls),
+    url(r'^$',                        armadillo.views.index, name='index'),
+    path('neurovault/<slug:image>/',  armadillo.views.image, name='vault-image'),
+    url(r'^admin/?',                  admin.site.urls),
 ]
