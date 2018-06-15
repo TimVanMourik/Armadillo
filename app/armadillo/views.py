@@ -5,6 +5,9 @@ from .utils import create_qr_from_text, put_qr_on_marker
 from django.conf import settings
 from django.templatetags.static import static
 from PIL import Image
+from django.core.files.base import ContentFile
+from django.core.files.uploadedfile import InMemoryUploadedFile
+import base64
 
 
 def index(request):
@@ -38,10 +41,15 @@ def test(request, image=''):
     qr_link = settings.BASE_URL + '/test/image'
     # qr_code = create_qr_from_text(qr_link)
     marker_with_qr = put_qr_on_marker(qr_link, 'staticfiles/img/marker.png')
+    
+    pillow_image = ContentFile(base64.b64decode(marker_with_qr), name='temp.jpg')
+    image_file = InMemoryUploadedFile(pillow_image, None, 'foo.jpg', 'image/jpeg', pillow_image.tell, None)
 
     # context = {'img_str': marker_with_qr}
-    context = {'img_str': HttpResponse(marker_with_qr, content_type="image/jpeg")}
+    context = {'img_str': HttpResponse(ContentFile(marker_with_qr), content_type="image/jpeg")}
 
     # return TemplateResponse(request, 'test.html', context)
 
-    return HttpResponse(marker_with_qr, content_type="image/jpeg")
+    return HttpResponse(image_file, content_type="image/jpeg")
+
+
