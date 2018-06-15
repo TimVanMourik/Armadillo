@@ -1,0 +1,464 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+}
+
+.wrapper {
+  min-height: 100%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+:focus {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+.header {
+  width: 100%;
+  display: table;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+  padding: 0 20px 0 90px;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  background: #fff;
+}
+
+.header .logo {
+  height: 59px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column-reverse;
+}
+
+.header .logo a {
+  color: #222;
+  font-weight: bold;
+  font-size: 19px;
+}
+
+.header .toolbar {
+  text-align: right;
+  padding: 15px 0 0 0;
+  position: relative;
+}
+
+.header .toolbar .btn {
+  border: none;
+  background: none;
+  width: 35px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.header .toolbar .btn.btn-default:hover {
+  background: #222;
+  color: #fff;
+}
+
+.header .toolbar .toggle-bar {
+  width: 350px;
+  min-height: 100%;
+  position: absolute;
+  right: -400px;
+  top: 60px;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+}
+
+.toolbar .bar-toggle.toggle-bar {
+  right: 0;
+  padding: 20px;
+}
+
+.toolbar .bar-toggle .panel {
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 20px 0;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.left-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    width: 60px;
+    z-index: 2;
+    background: #323c46;
+    height: 200px;
+}
+
+::-webkit-scrollbar{
+    width:1px;
+}
+
+::-webkit-scrollbar-thumb{
+    border-width:1px 1px 1px 2px;
+    border-color: #777;
+    background-color: #aaa;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    border-width: 1px 1px 1px 2px;
+    border-color: #555;
+    background-color: #777;
+}
+
+::-webkit-scrollbar-track{
+    border-width:0;
+}
+
+.toggle-sidebar .toggle-bar {
+  text-align: center;
+}
+
+.toggle-sidebar .toggle-bar button .fa.icon-left {
+  display: none;
+}
+
+.toggle-sidebar .setting {
+  float: right;
+}
+
+.toggle-sidebar .setting button,
+.toggle-sidebar .toggle-bar button {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.toggle-sidebar .setting button {
+  display: none;
+}
+
+.auth {
+    width: 100%;
+    background: #f5f5f5;
+    position: absolute;
+    right: 0px;
+    left: 0;
+    display: none;
+    margin-top: 21px;
+    z-index: 2;
+}
+
+
+.auth ul li a {
+  text-align: center;
+    display: block;
+    border-bottom: 1px solid #ccc;
+    margin: 0;
+    padding: 10px  0;
+    color: #4682B4;
+}
+
+.auth ul li a:hover {
+    text-decoration: underline;
+}
+
+.auth ul li .content-user {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background: transparent;
+  display: none;
+  border: 1px solid green;
+  overflow: hidden;
+}
+
+.auth ul li .content-user .user {
+  width: 400px;
+  min-height: auto;
+  max-height: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 5px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  margin: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: none;
+}
+
+.auth ul li .content-user .overlay {
+  background: rgba(0,0,0,0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+
+
+.auth ul .reg a {
+  color: #cc0000;
+}
+
+
+.left-sidebar nav .main-menu li {
+  margin: 0;
+  padding: 0;
+}
+
+.left-sidebar nav .main-menu li a {
+  margin: 0;
+  padding: 25px 20px;
+  color: #fff;
+  display: block;
+  text-align: center;
+  line-height: 19px;
+}
+
+.left-sidebar nav .main-menu li a span {
+  display: none;
+}
+
+.left-sidebar nav .main-menu li a .fa {
+  font-size: 18px;
+}
+
+
+
+.left-sidebar nav .main-menu .home {
+  border-left: 2px solid #e6463c;
+}
+
+.left-sidebar nav .main-menu .home.dashboard:hover {
+  background: #e6463c;
+}
+
+.left-sidebar nav .main-menu .home.dashboard:hover > .sub-menu .home {
+  background: #e6463c;
+}
+
+
+.left-sidebar nav .main-menu .blog {
+  border-left: 2px solid #ee7f1d;
+}
+
+.left-sidebar nav .main-menu .blog.dashboard:hover {
+  background: #ee7f1d;
+}
+.left-sidebar nav .main-menu .blog.dashboard:hover > .sub-menu .home {
+  background: #ee7f1d;
+}
+
+
+.left-sidebar nav .main-menu .services {
+  border-left: 2px solid #6450c8;
+}
+
+.left-sidebar nav .main-menu .services.dashboard:hover {
+  background: #6450c8;
+}
+.left-sidebar nav .main-menu .services.dashboard:hover > .sub-menu .home {
+  background: #6450c8;
+}
+
+.left-sidebar nav .main-menu .portfolio {
+  border-left: 2px solid #6cb4dd;
+}
+
+.left-sidebar nav .main-menu .portfolio.dashboard:hover {
+  background: #6cb4dd;
+}
+.left-sidebar nav .main-menu .portfolio.dashboard:hover > .sub-menu .home {
+  background: #6cb4dd;
+}
+
+.left-sidebar nav .main-menu .contact {
+  border-left: 2px solid #2fa53e;
+}
+
+.left-sidebar nav .main-menu .contact.dashboard:hover {
+  background: #2fa53e;
+}
+.left-sidebar nav .main-menu .contact.dashboard:hover > .sub-menu .home {
+  background: #2fa53e;
+}
+
+
+.left-sidebar nav .main-menu .home,
+.left-sidebar nav .main-menu .blog,
+.left-sidebar nav .main-menu .services,
+.left-sidebar nav .main-menu .portfolio,
+.left-sidebar nav .main-menu .contact {
+  position: relative;
+}
+
+
+.left-sidebar nav .main-menu .sub-menu {
+    width: 250px;
+    margin-left: 2px;
+    display: none;
+    position: absolute;
+    z-index: 99999;
+    background: #323c46;
+    left: 56px;
+    top: 0;
+    max-height: 350px;
+    overflow-y: scroll;
+}
+
+.left-sidebar .main-menu li:hover .sub-menu {
+  display: block;
+}
+
+.left-sidebar nav .main-menu .sub-menu li a {
+  padding-right: 0;
+  text-align: left;
+  border-left: none;
+  padding-left: 30px;
+}
+
+.left-sidebar nav .main-menu .sub-menu ul li {
+  border-left: none;
+  padding-left: 4px;
+  position: relative;
+}
+
+.left-sidebar nav .main-menu .sub-menu ul li:hover {
+  background: #28323b;
+  cursor: pointer;
+}
+
+.left-sidebar nav .main-menu .sub-menu a {
+  border-left: none;
+  text-align: left;
+}
+
+
+.left-sidebar nav .main-menu .sub-menu li .fa {
+      position: absolute;
+    top: 26px;
+    left: 10px;
+    color: #fff;
+}
+
+.left-sidebar .toggle-sidebar {
+  width: 100%;
+  padding: 18px 0;
+  display: table;
+}
+
+
+/* Extended */
+
+.extended.header {
+  padding-left: 180px;
+}
+
+.extended.left-sidebar {
+  width: 150px !important;
+}
+
+.extended.left-sidebar nav li a span {
+  display: inline-block;
+  padding-left: 14px;
+}
+
+.extended.left-sidebar nav li a {
+  text-align: left;
+}
+
+.extended.left-sidebar .toggle-sidebar .toggle-bar {
+  float: left;
+  padding-left: 13px;
+  padding-top: 2px;
+}
+
+.extended.left-sidebar .auth a span {
+  display: inline-block;
+  padding-left: 10px;
+}
+
+.extended.left-sidebar .toggle-sidebar .toggle-bar button .fa.icon-right {
+  display: none;
+}
+
+.extended.left-sidebar .toggle-sidebar .toggle-bar button .fa.icon-left {
+  display: block;
+}
+
+.extended.left-sidebar .toggle-sidebar .setting button {
+  display: block;
+  padding-right: 15px;
+}
+
+.extended.left-sidebar .toggle-sidebar .setting button .fa {
+  padding-right: 7px;
+}
+
+
+.extended.main {
+      padding: 0 35px 0 180px;
+}
+
+.extended.left-sidebar nav .main-menu .sub-menu {
+  position: static;
+    left: 0;
+    width: 100%;
+    margin-left: -1px;
+}
+
+.extended.left-sidebar {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.extended.left-sidebar nav .main-menu .home.dashboard:hover > .sub-menu .home,
+.extended.left-sidebar nav .main-menu .blog.dashboard:hover > .sub-menu .home,
+.extended.left-sidebar nav .main-menu .services.dashboard:hover > .sub-menu .home,
+.extended.left-sidebar nav .main-menu .portfolio.dashboard:hover > .sub-menu .home,
+.extended.left-sidebar nav .main-menu .contact.dashboard:hover > .sub-menu .home {
+  background: transparent;
+}
+
+.col-lg-1{float: left; width: 8.33333333%;}
+.col-lg-2{float: left; width: 16.66666667%;}
+.col-lg-3{float: left; width: 25%;}
+.col-lg-4{float: left; width: 33.33333333%;}
+.col-lg-5{float: left; width: 41.66666667%;}
+.col-lg-6{float: left; width: 50%;}
+.col-lg-7{float: left; width: 58.33333333%;}
+.col-lg-8{float: left; width: 66.66666667%;}
+.col-lg-9{float: left; width: 75%;}
+.col-lg-10{float: left; width: 83.33333333%;}
+.col-lg-11{float: left; width: 91.66666667%;}
+.col-lg-12{width: 100%;}

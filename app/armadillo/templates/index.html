@@ -8,6 +8,9 @@
   <!-- <script src="{% static "js/aframe-ar.js" %}"></script> -->
   <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
 
+  <script src="{% static "js/jquery-3.3.1.min.js" %}"></script>
+
+  <link rel="stylesheet" type="text/css" href="{% static "css/armadillo.css" %}">
 
 </head>
 <body class=index>
@@ -15,13 +18,31 @@
     {% include 'shared/nav.html' %}
   </div>
 
+
+
+  <aside class="left-sidebar">
+		<div class="toggle-sidebar">
+			<div class="toggle-bar">
+				<button>
+					<i class="fa fa-indent fa-lg icon-right"></i>
+					<i class="fa fa-dedent fa-lg icon-left"></i>
+				</button>
+			</div>
+		</div>
+  		<nav class="nav">
+        [Add QR code here]
+  		</nav>
+  	</aside>
+
+
+
   <div>
-    TEST
+
     <!-- {{surface_left_file}} -->
     <!-- {{surface_right_file}} -->
   </div>
   <!-- <div> -->
-    <a-scene embedded arjs='trackingMethod: best; debugUIEnabled:{{ settings.DEBUG }} markersAreaEnabled: true'>
+    <a-scene embedded arjs='trackingMethod: best; debugUIEnabled:{{DEBUG}}'>
       <a-assets>
         <a-asset-item id="rh-model" src="https://raw.githubusercontent.com/TimVanMourik/ChristmasAR/master/data/mni_right_hemisphere.dae" crossOrigin="anonymous"></a-asset-item>
         <a-asset-item id="lh-model" src="https://raw.githubusercontent.com/TimVanMourik/ChristmasAR/master/data/mni_left_hemisphere.dae" crossOrigin="anonymous"></a-asset-item>
@@ -41,13 +62,30 @@
     </a-scene>
 
 
-    <!-- <div class="container-fluid marker-container">
-    </div> -->
+    <div class="container-fluid marker-container">
+    </div>
   <!-- </div> -->
 
   {% include 'shared/footer.html' %}
-</body>
 
+
+  <script>
+  $('.toggle-sidebar .toggle-bar button').click(function() {
+		$('.left-sidebar, .header, main, .main .container').toggleClass('extended');
+		$('.auth').css({'display' : 'none'});
+	});
+
+
+	$('.left-sidebar .toggle-sidebar .setting button').click(function() {
+		$('.auth').toggle();
+	});
+
+$('.toolbar .btn').on("click", function() {
+  $('.toggle-bar').toggleClass('bar-toggle');
+});
+
+  </script>
+  </body>
 {% include 'shared/analytics.html' %}
 
 </html>
