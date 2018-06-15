@@ -11,21 +11,30 @@
     {% include 'shared/nav.html' %}
   </div>
 
-  <a-scene embedded arjs='trackingMethod: best; debugUIEnabled:false'>
-    <a-assets>
-      <a-asset-item id="tree-model" src="https://raw.githubusercontent.com/TimVanMourik/ChristmasAR/master/data/Tree.dae" crossOrigin="anonymous"></a-asset-item>
-      <a-asset-item id="text-model" src="https://raw.githubusercontent.com/TimVanMourik/ChristmasAR/master/data/MerryChristmas.dae" crossOrigin="anonymous"></a-asset-item>
-      <a-marker-camera type='pattern' url="{% static "img/patt/pattern-marker.patt" %}"></a-marker-camera>
-    </a-assets>
-      <a-anchor hit-testing-enabled='true'>
-        <a-collada-model src="#tree-model"  position="0 0 0" scale="1 1 1" rotation="0 0 0">
-      </a-collada-model>
-      <a-collada-model src="#text-model"  position="0 0 0" scale="1 1 1">
-      <a-animation attribute="rotation" to="0 360 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
-      </a-collada-model>
-      </a-anchor>
-    <a-camera-static/>
-  </a-scene>
+  <!-- <div>
+  </div> -->
+  <!-- <div> -->
+    <a-scene embedded arjs='trackingMethod: best; debugUIEnabled:{{ settings.DEBUG }}'>
+      <a-assets>
+        <a-asset-item id="rh-model" src="https://raw.githubusercontent.com/TimVanMourik/ChristmasAR/master/data/mni_right_hemisphere.dae" crossOrigin="anonymous"></a-asset-item>
+        <a-asset-item id="lh-model" src="https://raw.githubusercontent.com/TimVanMourik/ChristmasAR/master/data/mni_left_hemisphere.dae" crossOrigin="anonymous"></a-asset-item>
+      </a-assets>
+        <a-anchor hit-testing-enabled='true'>
+        <a-collada-model src="#rh-model"  position="0 0 0" scale="0.01 0.01 0.01" rotation="0 180 0">
+          <a-animation attribute="rotation" to="0 180 360" dur="5000" easing='linear' repeat="indefinite"></a-animation>
+        </a-collada-model>
+        <a-collada-model src="#lh-model"  position="0 0 0" scale="0.01 0.01 0.01" rotation="0 180 0">
+          <a-animation attribute="rotation" to="0 180 360" dur="5000" easing='linear' repeat="indefinite"></a-animation>
+        </a-collada-model>
+        </a-anchor>
+      <!-- <a-marker-camera type='pattern' url="{% static "img/patt/pattern-marker.patt" %}"></a-marker-camera> -->
+      <a-camera-static/>
+    </a-scene>
+
+
+    <!-- <div class="container-fluid marker-container">
+    </div>
+  </div> -->
 
   {% include 'shared/footer.html' %}
 </body>
