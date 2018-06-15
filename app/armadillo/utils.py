@@ -1,6 +1,11 @@
 import qrcode
 from PIL import Image
-import matplotlib.pyplot as plt
+from django.templatetags.static import static
+import base64
+import numpy
+from io import BytesIO
+import io
+# import matplotlib.pyplot as plt
 
 DEF_SIZE_MARKER = 512
 
@@ -24,7 +29,7 @@ def create_qr_from_text(text):
     img = qr.make_image()
     return img
 
-def put_qr_on_marker(text, marker_in = 'marker.png', marker_qr_out = 'markerqr.png'):
+def put_qr_on_marker(text, marker_in = static('/img/marker.png'), marker_qr_out = 'markerqr.png'):
     """
     Puts qr code with text on marker image.
     Args:
@@ -43,10 +48,10 @@ def put_qr_on_marker(text, marker_in = 'marker.png', marker_qr_out = 'markerqr.p
     new_im = Image.new('RGB', (t_width, t_height), "white")
 
     new_im.paste(img, (0, 0))
-
     new_im.paste(qr_img, (80 +  qr_img.size[0], 155))
 
-    new_im.save(marker_qr_out)
+    buffered = BytesIO()
+    new_im.save(buffered, format="JPEG")
+    img_str = base64.b64encode(buffered.getvalue())
 
-if __name__ == '__main__':
-    put_qr_on_marker("here/is/my/url")
+    return img_str

@@ -3,5 +3,8 @@ django-heroku
 django-livereload-server
 djangorestframework==3.7.3
 gunicorn
+numpy
+Pillow
 psycopg2-binary
 PyYAML
+qrcode

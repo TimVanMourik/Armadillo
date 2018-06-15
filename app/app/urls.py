@@ -25,5 +25,6 @@ app_name = 'app'
 urlpatterns = [
     url(r'^$',                        armadillo.views.index, name='index'),
     path('neurovault/<slug:image>/',  armadillo.views.image, name='vault-image'),
+    path('test/<slug:image>/',        armadillo.views.test,  name='test'),
     url(r'^admin/?',                  admin.site.urls),
 ]
