@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# The next block will read your .env
+if [ -f .env ]; then
+    export $(cat .env | grep -v ^# | xargs)
+fi
+
 #django commands
 cd app
 python manage.py collectstatic --noinput -i other &
