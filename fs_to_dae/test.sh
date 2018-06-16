@@ -6,7 +6,7 @@ python fs_to_dae.py\
 
 python fs_to_dae.py\
   -i test_data/rh.pial\
-  -o "fsave_rh_pial.dae"
+  -o "fsave_rh_pial.dae"\
   -c test_data/rh.curv
 
 #python fs_to_wavefront_obj.py\

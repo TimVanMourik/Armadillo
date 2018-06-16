@@ -42,7 +42,6 @@ def fs_to_dae( args ):
 
   for i in range(3):
     norms[:,i] = norms[:,i] / norm_sizes
-  print(norms)
 
   #
   # collada section
