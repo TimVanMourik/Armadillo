@@ -8,3 +8,5 @@ Pillow
 psycopg2-binary
 PyYAML
 qrcode
+nibabel
+pycollada
