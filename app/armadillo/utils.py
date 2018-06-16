@@ -12,13 +12,6 @@ import io
 DEF_SIZE_MARKER = 512
 
 def create_qr_from_text(text):
-    """
-    Creates qr code.
-    Args:
-      *text* (str) text
-    Out:
-      PIL Image with QR code
-    """
     qr = qrcode.QRCode(
      version=1,
      error_correction=qrcode.constants.ERROR_CORRECT_L,
@@ -31,14 +24,7 @@ def create_qr_from_text(text):
     img = qr.make_image()
     return img
 
-def put_qr_on_marker(text, marker_in, marker_qr_out = 'markerqr.png'):
-    """
-    Puts qr code with text on marker image.
-    Args:
-      *text* (str) text
-      *marker_in* - (str) - input png file
-      *marker_qr_out* - (str) - output png  file
-    """
+def put_qr_on_marker(text, marker_in):
     img = Image.open(marker_in)
 
     qr_img = create_qr_from_text(text)
@@ -49,6 +35,7 @@ def put_qr_on_marker(text, marker_in, marker_qr_out = 'markerqr.png'):
 
     new_im = Image.new('RGB', (t_width, t_height), "white")
 
+    #hard-coded position:
     new_im.paste(img, (0, 0))
     new_im.paste(qr_img, (60 +  qr_img.size[0], 155))
 

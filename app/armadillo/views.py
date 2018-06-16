@@ -17,6 +17,5 @@ def index(request):
     return TemplateResponse(request, 'welcome.html', context)
 
 def image(request, image=''):
-
     context = { 'image_id': image }
     return TemplateResponse(request, 'index.html', context)

@@ -52,8 +52,7 @@ def hemisphere(request, image='', hemisphere=''):
     scalars = scalars.darrays[0].data
     fs_base = os.path.join(settings.BASE_DIR, 'staticfiles/fs/')
 
-    verts,faces = fsio.read_geometry(\
-      os.path.join(fs_base,"%s.pial" % hemi_short))
+    verts,faces = fsio.read_geometry(os.path.join(fs_base,"%s.pial" % hemi_short))
 
     bytestream = bytes(fv_scalar_to_collada(verts,faces,scalars).getvalue())
     a  = ContentFile(bytestream, f"{hemisphere}.dae")

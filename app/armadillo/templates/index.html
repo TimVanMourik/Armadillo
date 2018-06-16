@@ -18,8 +18,6 @@
     {% include 'shared/nav.html' %}
   </div>
 
-
-
   <aside class="left-sidebar" style="width:20%; background-color: white;">
 		<nav class="nav">
       <img src='/neurovault/{{ image_id }}/qr' width="90%" height="90%"/>
@@ -27,31 +25,6 @@
     <p><h2>Armadillo</h2></p>
 	</aside>
 
-
-  <script>
-    AFRAME.registerComponent('model-overrider', {
-      init: function() {
-        console.log("hello")
-        this.el.addEventListener('model-loaded', function(e) {
-          var model = e.detail.model;
-          model.traverse(function(o) {
-            if (o instanceof THREE.Mesh) {
-              // modify o.material or o.geometry here.
-              o.material.vertexColors = THREE.VertexColors
-            }
-          });
-        });
-      }
-    });
-  </script>
-
-
-
-  <div>
-
-    <!-- {{surface_left_file}} -->
-    <!-- {{surface_right_file}} -->
-  </div>
   <!-- <div> -->
     <!-- <a-scene embedded arjs='trackingMethod: best; debugUIEnabled:{{settings.DEBUG}}'> -->
     <a-scene embedded arjs='trackingMethod: best; debugUIEnabled:false'>
@@ -73,13 +46,24 @@
       <!-- <a-camera-static/> -->
     </a-scene>
 
-
-    <div class="container-fluid marker-container">
-    </div>
-  <!-- </div> -->
-
   {% include 'shared/footer.html' %}
 
+  <script>
+    AFRAME.registerComponent('model-overrider', {
+      init: function() {
+        console.log("hello")
+        this.el.addEventListener('model-loaded', function(e) {
+          var model = e.detail.model;
+          model.traverse(function(o) {
+            if (o instanceof THREE.Mesh) {
+              // modify o.material or o.geometry here.
+              o.material.vertexColors = THREE.VertexColors
+            }
+          });
+        });
+      }
+    });
+  </script>
 
   <script>
   $('.toggle-sidebar .toggle-bar button').click(function() {
