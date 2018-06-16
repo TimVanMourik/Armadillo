@@ -12,7 +12,7 @@ from .utils import create_qr_from_text, put_qr_on_marker
 
 def qr(request, image=''):
 
-    qr_link = settings.BASE_URL + '/test/image'
+    qr_link = settings.BASE_URL + 'neurovault/'+ image
     # qr_code = create_qr_from_text(qr_link)
     marker_with_qr = put_qr_on_marker(qr_link, 'staticfiles/img/marker.png')
 

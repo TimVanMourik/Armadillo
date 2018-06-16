@@ -17,7 +17,7 @@ import io
 
 def index(request):
     context = {}
-    return TemplateResponse(request, 'index.html', context)
+    return TemplateResponse(request, 'welcome.html', context)
 
 #todo: use matplotlib color functions
 def color_func( scalars ):

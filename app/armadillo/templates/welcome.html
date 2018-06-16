@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include 'shared/head.html' %}
+
+  <script src="{% static "js/jquery-3.3.1.min.js" %}"></script>
+
+  <link rel="stylesheet" type="text/css" href="{% static "css/armadillo.css" %}">
+<style type="text/css"> 
+#mydiv {
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    width:30em;
+    height:18em;
+    margin-top: -9em; 
+    margin-left: -15em; 
+    border: 1px solid #ccc;
+    background-color: #f3f3f3;
+    text-align: center;
+}
+
+h1 {
+  color: #ec636a;
+  font-size: 60px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 15px;
+  margin-left: 10px;
+}
+
+</style>
+</head>
+<body class=index>
+  <div id="mydiv">
+      <h1>Armadillo</h1>
+      <p> Welcome to the Armadillo app, which creates augmented reality <a href="https://neurovault.org/" target="_blank"> neurovault</a> images.</p>
+      <p> Try it out like this: <a href="neurovault/64763"> EXAMPLE</a> and use the marker displayed in the sidebar to see the effect. </p>
+      <small>
+        <p> Authors: Tim Van Mourik, Daniel Moyer, Dominik Krzemiński</p>
+        <p>Created at OHBM Brainhack 2018 in Singapore</p>
+      </small>
+  </div>
+
+  </body>
+{% include 'shared/analytics.html' %}
+
+</html>
