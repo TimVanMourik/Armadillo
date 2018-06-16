@@ -29,10 +29,10 @@
 				</button>
 			</div>
 		</div>
-  		<nav class="nav">
-        [Add QR code here]
-  		</nav>
-  	</aside>
+		<nav class="nav">
+      <img src='/neurovault/{{ image_id }}/qr' />
+		</nav>
+	</aside>
 
 
 
@@ -46,6 +46,8 @@
       <a-assets>
         <a-asset-item id="rh-model" src="https://raw.githubusercontent.com/TimVanMourik/ChristmasAR/master/data/mni_right_hemisphere.dae" crossOrigin="anonymous"></a-asset-item>
         <a-asset-item id="lh-model" src="https://raw.githubusercontent.com/TimVanMourik/ChristmasAR/master/data/mni_left_hemisphere.dae" crossOrigin="anonymous"></a-asset-item>
+        <!-- <a-asset-item id="rh-model" src="/nv/{{ image_id }}/mni_right_hemisphere.dae" crossOrigin="anonymous"></a-asset-item>
+        <a-asset-item id="lh-model" src="/nv/{{ image_id }}/mni_left_hemisphere.dae" crossOrigin="anonymous"></a-asset-item> -->
       </a-assets>
       <a-anchor hit-testing-enabled='true'>
       <a-collada-model src="#rh-model"  position="0 0 0" scale="0.01 0.01 0.01" rotation="0 180 0">
