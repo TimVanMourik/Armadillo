@@ -3,6 +3,18 @@ from nibabel.freesurfer import io as fsio
 import collada
 import numpy as np
 
+#todo: use matplotlib color functions
+def color_func( scalars ):
+  smin = np.min(scalars)
+  smax = np.max(scalars)
+  scalars = (scalars - smin) / smax
+
+  colors = np.zeros((scalars.shape[0],3))
+  colors[:,1] += scalars
+  colors[:,2] += (1-scalars)
+
+  return colors
+
 def fs_to_dae( args ):
 
   #load in FS mesh
@@ -43,6 +55,7 @@ def fs_to_dae( args ):
   else:
     scalars = fsio.read_morph_data(args.color)
     color = color_func(scalars)
+    #color = np.ones((norms.shape[0],3)) * 
 
   #create collada obj
   mesh = collada.Collada()
@@ -50,7 +63,7 @@ def fs_to_dae( args ):
   #add shading
   effect = collada.material.Effect("effect0",\
     [], #TEXTURES GO HERE
-    "phong", emission=(0.5,0.5,0.5), diffuse=(1,1,1), specular=(0,1,0),
+    "phong", diffuse=(1,1,1), specular=(1,1,1),
     double_sided=True)
   mat = collada.material.Material("material0", "mymaterial", effect)
   mesh.effects.append(effect)
