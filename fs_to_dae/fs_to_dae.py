@@ -30,11 +30,19 @@ def fs_to_dae( args ):
 
   for i in range(3):
     norms[:,i] = norms[:,i] / norm_sizes
-
+  print(norms)
 
   #
   # collada section
   #
+
+  #color
+  if not args.color:
+    #color = np.ones((norms.shape[0],4))
+    color = np.random.uniform(size=norms.shape)
+  else:
+    scalars = fsio.read_morph_data(args.color)
+    color = color_func(scalars)
 
   #create collada obj
   mesh = collada.Collada()
@@ -42,25 +50,32 @@ def fs_to_dae( args ):
   #add shading
   effect = collada.material.Effect("effect0",\
     [], #TEXTURES GO HERE
-    "phong", diffuse=(1,0,0), specular=(0,1,0))
+    "phong", emission=(0.5,0.5,0.5), diffuse=(1,1,1), specular=(0,1,0),
+    double_sided=True)
   mat = collada.material.Material("material0", "mymaterial", effect)
   mesh.effects.append(effect)
   mesh.materials.append(mat)
 
   vert_src = collada.source.FloatSource("cubeverts-array", verts, ('X', 'Y', 'Z'))
-  norm_src = collada.source.FloatSource("cubenormals-array", np.array(norms), ('X', 'Y', 'Z'))
+  #norm_src = collada.source.FloatSource("cubenormals-array", np.array(norms), ('X', 'Y', 'Z'))
+  color_src = collada.source.FloatSource("cubecolors-array", np.array(color), ('R', 'G', 'B'))
 
-  geom = collada.geometry.Geometry(mesh, "geometry0", "fsave_test", [vert_src,norm_src])
+  geom = collada.geometry.Geometry(mesh, "geometry0", "fsave_test",\
+    [vert_src,color_src])
 
   #creates list of inputs for collada DOM obj...so many decorators 
   input_list = collada.source.InputList()
 
   input_list.addInput(0, 'VERTEX', "#cubeverts-array")
-  input_list.addInput(1, 'NORMAL', "#cubenormals-array")
+  input_list.addInput(1, 'COLOR', "#cubecolors-array")
+  #input_list.addInput(2, 'NORMAL', "#cubenormals-array")
 
   #creates faces
   triset = geom.createTriangleSet(
-    np.array([faces,faces]), input_list, "materialref")
+    np.concatenate([faces,faces],axis=1),\
+    input_list, "materialref")
+
+  triset.generateNormals()
 
   geom.primitives.append(triset)
   mesh.geometries.append(geom)
@@ -89,6 +104,7 @@ if __name__ == "__main__":
 
   parser.add_argument("-i","--input",default=None)
   parser.add_argument("-o","--output",default=None)
+  parser.add_argument("-c","--color",default=None)
 
   args = parser.parse_args()
 
