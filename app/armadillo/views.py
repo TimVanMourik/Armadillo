@@ -84,7 +84,7 @@ def fv_scalar_to_collada(verts,faces,scalars):
     mesh.write(buf)
     return buf
 
-def image(request, image=''):
+def image(request, image='', hemi="left"):
     # query neurovault image
     fileUrl = f"https://neurovault.org/api/images/{image}"
     try:
@@ -93,29 +93,39 @@ def image(request, image=''):
     except (urllib.error.HTTPError, ValueError):
         fileData = None
 
+    if hemi not in ["left","right"]:
+        print("BAD HEMI IN IMAGE FUNC")
+        exit(1)
+    elif hemi == "left":
+        hemi_short = "lh"
+    else:
+        hemi_short = "rh"
+
     # parse image
 
     # colour file
-    surface_left_file =  fileData['surface_left_file']
-    surface_right_file = fileData['surface_right_file']
+    surface_file =  fileData['surface_%s_file' % hemi]
 
-    with urllib.request.urlopen(surface_left_file) as response:
-        gii = response.read().decode()
+    with urllib.request.urlopen(surface_file) as response:
+        gii = response.read()
 
     #THIS IS A COMPLETE HACK
     #TODO: remove this
-    with open("temp.func.gii","w") as f:
-        f.write(gii)
-    lh_scalars = nib.load("temp.func.gii")
-    lh_scalars = lh_scalars.darrays[0].data
+    #with open("temp.func.gii","w") as f:
+    #    f.write(gii)
+    #scalars = nib.load("temp.func.gii")
+    #gii_buf = io.BytesIO(bytes(gii))
+    scalars = nib.load(gii)
+    scalars = scalars.darrays[0].data
     ##print(lh_scalars.darrays[0].data)
 
     #nib.load("/neurovault/{image}/lh")
 
     fs_base = os.path.join(settings.BASE_DIR, 'staticfiles/fs/')
-    lh_v,lh_f = fsio.read_geometry(os.path.join(fs_base,"lh.pial"))
+    verts,faces = fsio.read_geometry(\
+      os.path.join(fs_base,"%s.pial" % hemi_short))
 
-    print(fv_scalar_to_collada(lh_v,lh_f,lh_scalars))
+    return(fv_scalar_to_collada(verts,faces,scalars))
 
     # if surface_left_file != None & surface_right_file != None
 
