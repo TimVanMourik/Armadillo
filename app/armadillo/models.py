@@ -17,14 +17,10 @@ from .utils import create_qr_from_text, put_qr_on_marker, color_func, fv_scalar_
 
 
 def qr(request, image=''):
-
-    qr_link = settings.BASE_URL + '/neurovault/'+ image
-    # qr_code = create_qr_from_text(qr_link)
+    qr_link = os.path.join(settings.BASE_URL, 'neurovault/'+ image)
     marker_with_qr = put_qr_on_marker(qr_link, 'staticfiles/img/marker.png')
-
-    pillow_image = ContentFile(base64.b64decode(marker_with_qr), name='temp.jpg')
-
-    return HttpResponse(pillow_image, content_type="image/jpeg")
+    image = ContentFile(base64.b64decode(marker_with_qr), name='temp.jpg')
+    return HttpResponse(image, content_type="image/jpeg")
 
 def hemisphere(request, image='', hemisphere=''):
     # query neurovault image
@@ -63,9 +59,6 @@ def hemisphere(request, image='', hemisphere=''):
     a  = ContentFile(bytestream, f"{hemisphere}.dae")
     file = InMemoryUploadedFile(a, None, f"{hemisphere}.dae", 'application/xml', len(bytestream), None)
     return HttpResponse(file, content_type='application/xml')
-
-
-    # return HttpResponse(urlopen(link), content_type='application/xml')
 
 def gifti(request, image='', hemisphere=''):
 

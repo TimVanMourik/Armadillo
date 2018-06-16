@@ -69,7 +69,6 @@ def color_func( scalars ):
 
     return colors
 
-
 def fv_scalar_to_collada(verts,faces,scalars):
 
     color = color_func(scalars)
