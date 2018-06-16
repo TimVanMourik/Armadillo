@@ -3,9 +3,11 @@ from django.contrib.postgres.fields import JSONField
 from django.core.files.base import ContentFile
 from django.conf import settings
 from urllib.request import urlopen
+import urllib.request, json
 import base64
 import os
 from django.http import HttpResponse
+from urllib.request import urlopen
 
 from .utils import create_qr_from_text, put_qr_on_marker
 
@@ -20,12 +22,21 @@ def qr(request, image=''):
 
     return HttpResponse(pillow_image, content_type="image/jpeg")
 
-def lh(request, image=''):
-    lh_link = 'https://raw.githubusercontent.com/TimVanMourik/ChristmasAR/master/data/mni_left_hemisphere.dae'
+def hemisphere(request, image='', hemisphere=''):
+    link = f"https://raw.githubusercontent.com/TimVanMourik/ChristmasAR/master/data/mni_{hemisphere}_hemisphere.dae"
 
-    return HttpResponse(urlopen(lh_link), content_type='application/xml')
+    return HttpResponse(urlopen(link), content_type='application/xml')
 
-def rh(request, image=''):
-    rh_link = 'https://raw.githubusercontent.com/TimVanMourik/ChristmasAR/master/data/mni_right_hemisphere.dae'
+def gifti(request, image='', hemisphere=''):
 
-    return HttpResponse(urlopen(rh_link), content_type='application/xml')
+    # query neurovault image
+    fileUrl = f"https://neurovault.org/api/images/{image}"
+    try:
+        with urllib.request.urlopen(fileUrl) as url:
+            fileData = json.loads(url.read().decode())
+    except (urllib.error.HTTPError, ValueError):
+        fileData = None
+
+    surface = fileData[f"surface_{hemisphere}_file"]
+
+    return HttpResponse(urlopen(surface), content_type='application/xml')

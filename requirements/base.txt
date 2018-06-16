@@ -3,6 +3,7 @@ django-heroku
 django-livereload-server
 djangorestframework==3.7.3
 gunicorn
+nibabel
 numpy
 Pillow
 psycopg2-binary

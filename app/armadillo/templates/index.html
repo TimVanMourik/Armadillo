@@ -53,12 +53,10 @@
     <!-- {{surface_right_file}} -->
   </div>
   <!-- <div> -->
-    <a-scene embedded arjs='trackingMethod: best; debugUIEnabled:{{DEBUG}}'>
+    <a-scene embedded arjs='trackingMethod: best; debugUIEnabled:{{settings.DEBUG}}'>
       <a-assets>
-        <a-asset-item id="rh-model" src="https://raw.githubusercontent.com/TimVanMourik/ChristmasAR/master/data/mni_right_hemisphere.dae" crossOrigin="anonymous"></a-asset-item>
-        <a-asset-item id="lh-model" src="https://raw.githubusercontent.com/TimVanMourik/ChristmasAR/master/data/mni_left_hemisphere.dae" crossOrigin="anonymous"></a-asset-item>
-        <!-- <a-asset-item id="rh-model" src="/nv/{{ image_id }}/mni_right_hemisphere.dae" crossOrigin="anonymous"></a-asset-item>
-        <a-asset-item id="lh-model" src="/nv/{{ image_id }}/mni_left_hemisphere.dae" crossOrigin="anonymous"></a-asset-item> -->
+        <a-asset-item id="rh-model" src="/neurovault/{{ image_id }}/models/right" crossOrigin="anonymous"></a-asset-item>
+        <a-asset-item id="lh-model" src="/neurovault/{{ image_id }}/models/left" crossOrigin="anonymous"></a-asset-item>
       </a-assets>
       <a-anchor hit-testing-enabled='true' model-overrider>
       <a-collada-model src="#rh-model"  position="0 0 0" scale="0.01 0.01 0.01" rotation="0 180 0">
