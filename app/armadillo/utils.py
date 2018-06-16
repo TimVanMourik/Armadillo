@@ -8,6 +8,7 @@ from django.conf import settings
 import collada
 import numpy as np
 import io
+import gzip
 
 DEF_SIZE_MARKER = 512
 
@@ -107,3 +108,21 @@ def fv_scalar_to_collada(verts,faces,scalars):
     buf = io.BytesIO()
     mesh.write(buf)
     return buf
+
+def gzip_str(string_):
+    out = io.BytesIO()
+
+    with gzip.GzipFile(fileobj=out, mode='w') as fo:
+        fo.write(string_.encode())
+
+    bytes_obj = out.getvalue()
+    return bytes_obj
+
+def gunzip_bytes_obj(bytes_obj):
+    in_ = io.BytesIO()
+    in_.write(bytes_obj)
+    in_.seek(0)
+    with gzip.GzipFile(fileobj=in_, mode='rb') as fo:
+        gunzipped_bytes_obj = fo.read()
+
+    return gunzipped_bytes_obj.decode()
