@@ -462,3 +462,13 @@ a {
 .col-lg-10{float: left; width: 83.33333333%;}
 .col-lg-11{float: left; width: 91.66666667%;}
 .col-lg-12{width: 100%;}
+
+
+h2 {
+  color: #ec636a;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 15px;
+  margin-left: 10px;
+}
