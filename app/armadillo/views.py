@@ -8,7 +8,7 @@ from django.core.files.uploadedfile import InMemoryUploadedFile
 
 def index(request):
     context = {}
-    return TemplateResponse(request, 'index.html', context)
+    return TemplateResponse(request, 'welcome.html', context)
 
 def image(request, image=''):
     # query neurovault image
