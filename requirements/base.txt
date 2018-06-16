@@ -7,5 +7,6 @@ nibabel
 numpy
 Pillow
 psycopg2-binary
+pycollada
 PyYAML
 qrcode
