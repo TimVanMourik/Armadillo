@@ -26,8 +26,8 @@ urlpatterns = [
     url(r'^$',                          armadillo.views.index, name='index'),
     path('neurovault/<slug:image>/',    armadillo.views.image, name='vault-image'),
     path('neurovault/<slug:image>/qr',  armadillo.models.qr, name='qr'),
-    # path('neurovault/<slug:image>/lh',  armadillo.models.lh, name='lh'),
-    # path('neurovault/<slug:image>/rh',  armadillo.models.rh, name='rh'),
+    path('neurovault/<slug:image>/lh',  armadillo.models.lh, name='lh'),
+    path('neurovault/<slug:image>/rh',  armadillo.models.rh, name='rh'),
     path('test/<slug:image>/',          armadillo.views.test,  name='test'),
     url(r'^admin/?',                    admin.site.urls),
 ]
