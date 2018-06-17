@@ -38,6 +38,11 @@ https://armadillo-brain.herokuapp.com
 * QR code to image specific web address...
 * ...within Augmented Reality marker
 
++++
+Example:
+![alt text](https://armadillo-brain.herokuapp.com/api/neurovault/64763/qr "QR code")
+
+
 ---
 
 # Thank you!
