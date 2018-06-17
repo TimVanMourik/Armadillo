@@ -18,6 +18,7 @@ from django.conf.urls import include, url
 from django.urls import path
 from django.contrib import admin
 
+from api.urls import api_urls
 import armadillo.views
 
 app_name = 'app'
@@ -25,8 +26,5 @@ app_name = 'app'
 urlpatterns = [
     url(r'^$',                          armadillo.views.index, name='index'),
     path('neurovault/<slug:image>/',    armadillo.views.image, name='vault-image'),
-    path('neurovault/<slug:image>/qr',  armadillo.models.qr, name='qr'),
-    path('neurovault/<slug:image>/models/<slug:hemisphere>',  armadillo.models.hemisphere, name='hemisphere'),
-    path('neurovault/<slug:image>/gifti/<slug:hemisphere>',  armadillo.models.gifti, name='gifti'),
-    url(r'^admin/?',                    admin.site.urls),
+    url(r'^api/', include(api_urls)),
 ]
