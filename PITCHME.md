@@ -7,13 +7,13 @@ Tim Van Mourik, Daniel Moyer, Dominik Krzemiński
 
 # Some collaborative angle
 
-* BrainHack 
+* BrainHack
 * We all have different skills
   * Tim: Web development + Augmented Reality
   * Daniel: Brain surfaces + FreeSurfer master
   * Dominik: Python master
-* Niche experts all around 
-    
+* Niche experts all around
+
 +++
 
 #### The team:
@@ -23,7 +23,7 @@ Tim Van Mourik, Daniel Moyer, Dominik Krzemiński
   * Graphics and visualisation
 * Dominik: Python master
   * QR code + AR marker
-  
+
 #### Other experts, e.g.:
 * Chris Gorgolewski: Neurovault
 * Anisha Keshavan: Web development
@@ -32,7 +32,7 @@ Tim Van Mourik, Daniel Moyer, Dominik Krzemiński
 
 # Armadillo
 https://armadillo-brain.herokuapp.com
-* Web application 
+* Web application
 * Augmented Reality brains
 * Neurovault activation maps
 * QR code to image specific web address...
@@ -42,11 +42,11 @@ https://armadillo-brain.herokuapp.com
 
 # Example:
 * Grab your phone
-* Let the QR code direct you to https://armadillo-brain.herokuapp.com/neurovault/64763
+* Let the QR code direct you to https://armadillo-brain.herokuapp.com/neurovault/64604
   * (or go there yourself)
 * Point your camera at the marker:
 
-![alt text](https://armadillo-brain.herokuapp.com/api/neurovault/64763/qr "QR code")
+![alt text](https://armadillo-brain.herokuapp.com/api/neurovault/64604/qr "QR code")
 
 
 ---
