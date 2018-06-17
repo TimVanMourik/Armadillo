@@ -10,8 +10,9 @@ Tim Van Mourik, Daniel Moyer, Dominik Krzemiński
 * BrainHack 
 * We all have different skills
   * Tim: Web development + Augmented Reality
-  * Daniel: Brain surfaces + FreeSurfer
+  * Daniel: Brain surfaces + FreeSurfer master
   * Dominik: Python master
+* Niche experts all around 
     
 +++
 
@@ -21,6 +22,10 @@ Tim Van Mourik, Daniel Moyer, Dominik Krzemiński
   * Graphics and visualisation
 * Dominik: Python master
   * QR code + AR marker
+  
+Other experts, e.g.:
+* Chris Gorgolewski: Neurovault
+* Anisha Keshavan: Web development
     
 ---
 
@@ -29,15 +34,6 @@ https://armadillo-brain.herokuapp.com
 * Augmented Reality brains
 * Displaying Neurovault activation maps
 * QR code with link in AR marker
-
-+++
-
-## [Empty subpages]
-
-
----
-
-## [Empty next page]
 
 ---
 
