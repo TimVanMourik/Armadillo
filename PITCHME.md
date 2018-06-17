@@ -39,7 +39,13 @@ https://armadillo-brain.herokuapp.com
 * ...within Augmented Reality marker
 
 +++
-Example:
+
+# Example:
+* Grab your phone
+* Let the QR code direct you to https://armadillo-brain.herokuapp.com/neurovault/64763
+  * (or go there yourself)
+* Point your camera at the marker:
+
 ![alt text](https://armadillo-brain.herokuapp.com/api/neurovault/64763/qr "QR code")
 
 
