@@ -33,7 +33,7 @@ Tim Van Mourik, Daniel Moyer, Dominik Krzemiński
 https://armadillo-brain.herokuapp.com
 * Web application 
 * Augmented Reality brains
-* Displaying Neurovault activation maps
+* Neurovault activation maps
 * QR code to image specific web address...
 * ...within Augmented Reality marker
 
