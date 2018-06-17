@@ -43,7 +43,7 @@ def hemisphere(request, image='', hemisphere=''):
     colors = numpy.fromstring(unzip, dtype='float32')
 
     if hemisphere not in ["left","right"]:
-        print("BAD HEMI IN IMAGE FUNC")
+        print("Bad hemisphere input")
         exit(1)
     elif hemisphere == "left":
         hemi_short = "lh"
@@ -54,20 +54,8 @@ def hemisphere(request, image='', hemisphere=''):
     verts,faces = fsio.read_geometry(os.path.join(fs_base,"%s.pial" % hemi_short))
 
     bytestream = bytes(fv_scalar_to_collada(verts,faces,colors).getvalue())
-    a  = ContentFile(bytestream, f"{hemisphere}.dae")
-    file = InMemoryUploadedFile(a, None, f"{hemisphere}.dae", 'application/xml', len(bytestream), None)
-    return HttpResponse(file, content_type='application/xml')
-
-def gifti(request, image='', hemisphere=''):
-
-    # query neurovault image
-    fileUrl = f"https://neurovault.org/api/images/{image}"
-    try:
-        with urllib.request.urlopen(fileUrl) as url:
-            fileData = json.loads(url.read().decode())
-    except (urllib.error.HTTPError, ValueError):
-        fileData = None
-
-    surface = fileData[f"surface_{hemisphere}_file"]
-
-    return HttpResponse(urllib.request.urlopen(surface), content_type='application/xml')
+    filename = f"{hemisphere}.dae"
+    file  = ContentFile(bytestream, filename)
+    response = HttpResponse(file, content_type='application/xml')
+    response['Content-Disposition'] = 'attachment; filename=' + filename
+    return response
