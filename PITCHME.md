@@ -16,6 +16,7 @@ Tim Van Mourik, Daniel Moyer, Dominik Krzemiński
     
 +++
 
+#### The team:
 * Tim: Web development + Augmented Reality
   * Website backbone
 * Daniel: Brain surfaces
@@ -23,10 +24,10 @@ Tim Van Mourik, Daniel Moyer, Dominik Krzemiński
 * Dominik: Python master
   * QR code + AR marker
   
-## Other experts, e.g.:
+#### Other experts, e.g.:
 * Chris Gorgolewski: Neurovault
 * Anisha Keshavan: Web development
-    
+
 ---
 
 # Armadillo
