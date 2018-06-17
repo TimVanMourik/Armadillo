@@ -23,7 +23,7 @@ Tim Van Mourik, Daniel Moyer, Dominik Krzemiński
 * Dominik: Python master
   * QR code + AR marker
   
-Other experts, e.g.:
+## Other experts, e.g.:
 * Chris Gorgolewski: Neurovault
 * Anisha Keshavan: Web development
     
@@ -31,9 +31,11 @@ Other experts, e.g.:
 
 # Armadillo
 https://armadillo-brain.herokuapp.com
+* Web application 
 * Augmented Reality brains
 * Displaying Neurovault activation maps
-* QR code with link in AR marker
+* QR code to image specific web address...
+* ...within Augmented Reality marker
 
 ---
 
