@@ -1,8 +1,14 @@
-# Neuroimaging through the years
-#### April 6, 2018
+# ARmadillo
+### Augmented Reality brains
+#### June 17, 2018
+#### Tim Van Mourik, Daniel Moyer, Dominik Krzemiński
 ---
 
-# An annotated animation of https://www.nature.com/articles/nn.3839.pdf
+# Armadillo
+https://armadillo-brain.herokuapp.com
+* Augmented Reality brains
+* Displaying Neurovault activation maps
+* QR code with link in AR marker
 
 +++
 
