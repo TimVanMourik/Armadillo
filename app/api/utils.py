@@ -9,6 +9,8 @@ import collada
 import numpy as np
 import io
 import gzip
+import matplotlib.cm as cm
+import numpy as np
 
 DEF_SIZE_MARKER = 512
 
@@ -58,8 +60,10 @@ def color_func( scalars ):
     return colors
 
 def fv_scalar_to_collada(verts,faces,scalars):
-
-    color = color_func(scalars)
+    # color = color_func(scalars)
+    a = (scalars - np.min(scalars)) / (np.max(scalars) - np.min(scalars)) * 256
+    color = cm.jet(a.astype(int))
+    color = np.delete(color, 3, 1)
 
     #create collada obj
     mesh = collada.Collada()
