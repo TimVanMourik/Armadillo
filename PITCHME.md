@@ -37,20 +37,6 @@ Tim Van Mourik, Daniel Moyer, Dominik Krzemiński
 
 ---
 
-#### This project:
-* Tim: _Web development + Augmented Reality_
-  * Website backbone
-* Daniel: _Brain surfaces_
-  * Graphics and visualisation
-* Dominik: _Python master_
-  * QR code + AR marker
-
-#### Other experts, e.g.:
-* Chris Gorgolewski: Neurovault
-* Anisha Keshavan: Web development
-
----
-
 # Armadillo
 https://armadillo-brain.herokuapp.com
 * Neuroimaging data often in 3D (Surfaces, Volumes, Tracts,...)
