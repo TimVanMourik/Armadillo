@@ -5,7 +5,18 @@ Tim Van Mourik, Daniel Moyer, Dominik Krzemiński
 
 ---
 
-# Some collaborative angle
+# Bringing People Together!
+
+* BrainHack
+* We all have different subfields
+  * Tim: fMRI/Methods
+  * Daniel: dMRI/Statistics
+  * Dominik: MEG/Physics
+* Niche experts all around
+
++++
+
+# Bringing People Together!
 
 * BrainHack
 * We all have different skills
@@ -14,9 +25,9 @@ Tim Van Mourik, Daniel Moyer, Dominik Krzemiński
   * Dominik: Python master
 * Niche experts all around
 
-+++
+---
 
-#### The team:
+#### This project:
 * Tim: Web development + Augmented Reality
   * Website backbone
 * Daniel: Brain surfaces
@@ -44,7 +55,11 @@ https://armadillo-brain.herokuapp.com
 * Grab your phone
 * Let the QR code direct you to https://armadillo-brain.herokuapp.com/neurovault/64604
   * (or go there yourself)
-* Point your camera at the marker:
+* Point your camera at the marker (on the next slide).
+
++++
+
+# Marker:
 
 ![alt text](https://armadillo-brain.herokuapp.com/api/neurovault/64604/qr "QR code")
 
