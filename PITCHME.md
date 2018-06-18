@@ -1,7 +1,7 @@
 # ARmadillo
 ### Augmented Reality brains
 #### June 17, 2018
-Tim Van Mourik, Daniel Moyer, Dominik Krzemiński
+Tim van Mourik, Daniel Moyer, Dominik Krzemiński
 
 ---
 
