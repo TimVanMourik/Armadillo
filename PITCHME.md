@@ -8,9 +8,9 @@ Tim Van Mourik, Daniel Moyer, Dominik Krzemiński
 # BrainHack
 
 * We all have different subfields
-  * Tim: fMRI/Methods
-  * Daniel: dMRI/Statistics
-  * Dominik: MEG/Physics
+  * Tim: _fMRI/Methods_
+  * Daniel: _dMRI/Statistics_
+  * Dominik: _MEG/Physics_
 * Niche experts all around
 
 +++
@@ -18,10 +18,22 @@ Tim Van Mourik, Daniel Moyer, Dominik Krzemiński
 # BrainHack
 
 * We all have different skills
-  * Tim: Web development + Augmented Reality
-  * Daniel: Brain surfaces + FreeSurfer master
-  * Dominik: Python master
+  * Tim: _Web development + Augmented Reality_
+  * Daniel: _Brain surfaces + FreeSurfer master_
+  * Dominik: _Python master_
 * Niche experts all around
+
++++
+
+# BrainHack
+
+* We all have different skills
+  * Tim:  _Website backbone_
+  * Daniel: _Graphics and visualisation_
+  * Dominik: _QR code + AR marker_
+* Niche experts all around
+  * Chris Gorgolewski: Neurovault
+  * Anisha Keshavan: Web development
 
 ---
 
