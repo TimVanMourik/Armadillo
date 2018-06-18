@@ -41,11 +41,14 @@ Tim Van Mourik, Daniel Moyer, Dominik Krzemiński
 
 # Armadillo
 https://armadillo-brain.herokuapp.com
-* Web application
-* Augmented Reality brains
+* Neuroimaging data often in 3D (Surfaces, Volumes, Tracts,...)
+* Poster presentations always in 2D
+* *Possible Solution*: Augmented Reality brains (ARmadillo)
+
+###Features:
 * Neurovault activation maps
 * QR code to image specific web address...
-* ...within Augmented Reality marker
+* ...within the Augmented Reality marker, which is just a png/jpg.
 
 +++
 
