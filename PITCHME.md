@@ -27,9 +27,9 @@ Tim Van Mourik, Daniel Moyer, Dominik Krzemiński
 
 # Armadillo
 https://armadillo-brain.herokuapp.com
-* Neuroimaging data often in 3D (Surfaces, Volumes, Tracts,...)
+* Data often in 3D (Surfaces, Volumes, Tracts,...)
 * Poster presentations always in 2D
-* *Possible Solution*: Augmented Reality brains (ARmadillo)
+* *Possible Solution*: Augmented Reality (ARmadillo)
 
 ---
 
