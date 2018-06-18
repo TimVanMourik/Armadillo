@@ -5,9 +5,8 @@ Tim Van Mourik, Daniel Moyer, Dominik Krzemiński
 
 ---
 
-# Bringing People Together!
+# BrainHack
 
-* BrainHack
 * We all have different subfields
   * Tim: fMRI/Methods
   * Daniel: dMRI/Statistics
@@ -16,9 +15,8 @@ Tim Van Mourik, Daniel Moyer, Dominik Krzemiński
 
 +++
 
-# Bringing People Together!
+# BrainHack
 
-* BrainHack
 * We all have different skills
   * Tim: Web development + Augmented Reality
   * Daniel: Brain surfaces + FreeSurfer master
@@ -28,11 +26,11 @@ Tim Van Mourik, Daniel Moyer, Dominik Krzemiński
 ---
 
 #### This project:
-* Tim: Web development + Augmented Reality
+* Tim: _Web development + Augmented Reality_
   * Website backbone
-* Daniel: Brain surfaces
+* Daniel: _Brain surfaces_
   * Graphics and visualisation
-* Dominik: Python master
+* Dominik: _Python master_
   * QR code + AR marker
 
 #### Other experts, e.g.:
