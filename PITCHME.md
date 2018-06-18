@@ -45,7 +45,7 @@ https://armadillo-brain.herokuapp.com
 * Poster presentations always in 2D
 * *Possible Solution*: Augmented Reality brains (ARmadillo)
 
-####Features:
+#### Features:
 * Neurovault activation maps
 * QR code to image specific web address...
 * ...within the Augmented Reality marker, which is just a png/jpg.
