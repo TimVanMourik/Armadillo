@@ -5,7 +5,7 @@ Tim Van Mourik, Daniel Moyer, Dominik Krzemiński
 
 ---
 
-#### bit.ly/armadillo-brain
+#### [bit.ly/armadillo-brain](bit.ly/armadillo-brain)
 ---
 
 # BrainHack
