@@ -14,7 +14,6 @@ Tim van Mourik, Daniel Moyer, Dominik Krzemiński
   * Tim: _fMRI/Methods_
   * Daniel: _dMRI/Statistics_
   * Dominik: _MEG/Physics_
-* Niche experts all around
 
 +++
 
@@ -24,7 +23,10 @@ Tim van Mourik, Daniel Moyer, Dominik Krzemiński
   * Tim: _Web development + Augmented Reality_
   * Daniel: _Brain surfaces + FreeSurfer master_
   * Dominik: _Python master_
-* Niche experts all around
+  
+* Niche experts all around, e.g.
+  * Chris Gorgolewski, _Neurovault_
+  * Anisha Keshavan, _Web development_
 
 ---
 
