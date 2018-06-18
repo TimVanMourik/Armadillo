@@ -5,8 +5,7 @@ Tim Van Mourik, Daniel Moyer, Dominik Krzemiński
 
 ---
 
-#### https://armadillo-brain.herokuapp.com/neurovault/64604
-
+#### bit.ly/armadillo-brain
 ---
 
 # BrainHack
