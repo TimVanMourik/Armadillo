@@ -23,18 +23,6 @@ Tim Van Mourik, Daniel Moyer, Dominik Krzemiński
   * Dominik: _Python master_
 * Niche experts all around
 
-+++
-
-# BrainHack
-
-* We all have different skills
-  * Tim:  _Website backbone_
-  * Daniel: _Graphics and visualisation_
-  * Dominik: _QR code + AR marker_
-* Niche experts all around
-  * Chris Gorgolewski: Neurovault
-  * Anisha Keshavan: Web development
-
 ---
 
 # Armadillo
@@ -43,10 +31,15 @@ https://armadillo-brain.herokuapp.com
 * Poster presentations always in 2D
 * *Possible Solution*: Augmented Reality brains (ARmadillo)
 
+---
+
 #### Features:
+* Uses device camera to view 3D data
+* Web-app (anything w/Camera and Browser)
 * Neurovault activation maps
 * QR code to image specific web address...
-* ...within the Augmented Reality marker, which is just a png/jpg.
+* ...within the Augmented Reality marker.
+
 
 +++
 
