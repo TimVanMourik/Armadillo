@@ -24,7 +24,7 @@ Tim van Mourik, Daniel Moyer, Dominik Krzemiński
   * Daniel: _Brain surfaces + FreeSurfer master_
   * Dominik: _Python master_
 
----
++++
 
 * Niche experts all around, e.g.
   * Chris Gorgolewski, _Neurovault_
