@@ -3,7 +3,7 @@
 #### June 17, 2018
 Tim van Mourik, Daniel Moyer, Dominik Krzemiński
 
----
++++
 
 #### [bit.ly/armadillo-brain](bit.ly/armadillo-brain)
 ---
@@ -43,13 +43,11 @@ https://armadillo-brain.herokuapp.com
 * QR code to image specific web address...
 * ...within the Augmented Reality marker.
 
-
 +++
 
 # Example:
 * Grab your phone
-* Let the QR code direct you to https://armadillo-brain.herokuapp.com/neurovault/64604
-  * (or go there yourself)
+* Please go to [bit.ly/armadillo-brain](bit.ly/armadillo-brain)
 * Point your camera at the marker (on the next slide).
 
 +++
@@ -57,7 +55,6 @@ https://armadillo-brain.herokuapp.com
 # Marker:
 
 ![alt text](https://armadillo-brain.herokuapp.com/api/neurovault/64604/qr "QR code")
-
 
 ---
 
