@@ -58,8 +58,14 @@ https://armadillo-brain.herokuapp.com
 
 # Marker:
 
-![alt text](https://armadillo-brain.herokuapp.com/api/neurovault/64604/qr "QR code")
+![alt text](https://armadillo-brain.herokuapp.com/api/neurovault/64604/qr)
 
 ---
 
 # Thank you!
+
++++
+
+This work is supported by the **SIDN fonds**
+![alt text](https://www.sidnfonds.nl/application/themes/sidnfonds/assets/img/sidnfonds-logo.svg)
+
