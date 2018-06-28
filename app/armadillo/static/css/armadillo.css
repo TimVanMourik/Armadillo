@@ -6,10 +6,10 @@
 }
 /* Otherwise the objects are positioned weirdly */
 
-/*html, body {
+html, body {
   height: 100%;
 }
-*/
+
 
 .container {
   left: 0px;
