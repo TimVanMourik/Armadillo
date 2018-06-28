@@ -6,28 +6,30 @@
 }
 /* Otherwise the objects are positioned weirdly */
 
-html, body {
+/*html, body {
   height: 100%;
 }
-
-.container, .left-sidebar {
-	height: 100%;
-  width: 100%;
-}
+*/
 
 .container {
   left: 0px;
 	position: absolute;
   -webkit-transition: left 0.3s ease-in-out;
+  height: 1200px;
 }
 
 .left-sidebar {
 	background: white;
-	margin-top: 25px;
+	padding-top: 250px;
+  padding-bottom: 100px;
+  padding-left: 50px;
 	text-align: center;
-  position: absolute;
-  left: -240px;
-  width: 240px;
+  position: relative;
+  left: -370px;
+  width: 360px;
+  border-radius: 25px;
+  border: 2px solid darkOrange;
+  z-index: 1;
 }
 
 .button {
@@ -40,14 +42,14 @@ html, body {
   color: darkOrange;
   cursor: pointer;
   left: 10px;
-  position: relative;
+  position: fixed;
 	text-align: center;
-  top: 40px;
+  top: 20px;
 	z-index: 1;
 }
 
 .slide {
-  left: 240px;
+  left: 310px;
 }
 
 h1 {
