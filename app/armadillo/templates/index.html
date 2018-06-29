@@ -59,7 +59,8 @@
       <a-animation attribute="rotation" to="0 180 360" dur="5000" easing='linear' repeat="indefinite"></a-animation>
     </a-collada-model>
     </a-anchor>
-    <a-marker-camera type='pattern' url="{% static "img/patt/pattern-marker.patt" %}"></a-marker-camera>
+    <a-image position="0 0.4 0" rotation="270 0 0" height="1" width="1"  src="https://raw.githubusercontent.com/mattGraphics/randomfiles/master/hello-you-text.png"></a-image>
+    <a-marker-camera preset='custom' type='pattern' url='https://raw.githubusercontent.com/TimVanMourik/Armadillo/master/app/armadillo/static/img/patt/pattern-marker.patt'></a-marker-camera> 
     <!-- <a-marker type='pattern' url="{% static "img/patt/pattern-marker.patt" %}"></a-marker> -->
     <!-- <a-camera-static/> -->
   </a-scene>
