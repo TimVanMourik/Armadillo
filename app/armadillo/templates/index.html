@@ -67,13 +67,11 @@
   {% include 'shared/footer.html' %}
   <script>
     var $container = $('.container');
-
+    function toggleMenu() {
+      $container.toggleClass('slide');
+    }
     $button = $('.button');
     $button.on('click', toggleMenu);
-
-    function toggleMenu() {
-    $container.toggleClass('slide');
-    }
   </script>
   </body>
 {% include 'shared/analytics.html' %}
