@@ -21,7 +21,7 @@ from .utils import create_qr_from_text, put_qr_on_marker, color_func, fv_scalar_
 
 def qr(request, image=''):
     qr_link = os.path.join(settings.BASE_URL, 'neurovault/'+ image)
-    marker_with_qr = put_qr_on_marker(qr_link, 'staticfiles/img/marker.png')
+    marker_with_qr = put_qr_on_marker(qr_link, 'staticfiles/img/patt/marker_ratio70.png')
     image = ContentFile(base64.b64decode(marker_with_qr), name='temp.jpg')
     return HttpResponse(image, content_type="image/jpeg")
 
