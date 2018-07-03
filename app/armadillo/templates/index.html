@@ -51,18 +51,15 @@
       <a-asset-item id="rh-model" src="/api/neurovault/{{ image_id }}/models/right" crossOrigin="anonymous"></a-asset-item>
       <a-asset-item id="lh-model" src="/api/neurovault/{{ image_id }}/models/left" crossOrigin="anonymous"></a-asset-item>
     </a-assets>
-    <a-anchor hit-testing-enabled='true' model-overrider>
+    <a-marker preset='custom' type='pattern' url='https://raw.githubusercontent.com/TimVanMourik/Armadillo/master/app/armadillo/static/img/patt/pattern-marker.patt'>
     <a-collada-model src="#rh-model"  position="0 0 0" scale="0.01 0.01 0.01" rotation="0 180 0">
       <a-animation attribute="rotation" to="0 180 360" dur="5000" easing='linear' repeat="indefinite"></a-animation>
     </a-collada-model>
     <a-collada-model src="#lh-model"  position="0 0 0" scale="0.01 0.01 0.01" rotation="0 180 0" material='opacity: 0.5;'>
       <a-animation attribute="rotation" to="0 180 360" dur="5000" easing='linear' repeat="indefinite"></a-animation>
     </a-collada-model>
-    </a-anchor>
-    <a-image position="0 0.4 0" rotation="270 0 0" height="1" width="1"  src="https://raw.githubusercontent.com/mattGraphics/randomfiles/master/hello-you-text.png"></a-image>
-    <a-marker-camera preset='custom' type='pattern' url='https://raw.githubusercontent.com/TimVanMourik/Armadillo/master/app/armadillo/static/img/patt/pattern-marker.patt'></a-marker-camera> 
-    <!-- <a-marker type='pattern' url="{% static "img/patt/pattern-marker.patt" %}"></a-marker> -->
-    <!-- <a-camera-static/> -->
+    </a-marker> 
+    <a-entity camera></a-entity>
   </a-scene>
 
   {% include 'shared/footer.html' %}
