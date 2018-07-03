@@ -35,7 +35,9 @@
   <div class="container">
     <div class="left-sidebar">
   		<div>
-        <img src='/api/neurovault/{{ image_id }}/qr' width="90%" height="90%"/>
+        <a href='/api/neurovault/{{ image_id }}/qr' target="_blank">
+          <img src='/api/neurovault/{{ image_id }}/qr' width="90%" height="90%"/>
+        </a>
   		</div>
       <p>
         <h2>Armadillo</h2>
@@ -51,17 +53,15 @@
       <a-asset-item id="rh-model" src="/api/neurovault/{{ image_id }}/models/right" crossOrigin="anonymous"></a-asset-item>
       <a-asset-item id="lh-model" src="/api/neurovault/{{ image_id }}/models/left" crossOrigin="anonymous"></a-asset-item>
     </a-assets>
-    <a-anchor hit-testing-enabled='true' model-overrider>
+    <a-marker model-overrider preset='custom' type='pattern' url="{% static "img/patt/pattern-marker_ratio70.patt" %}">
     <a-collada-model src="#rh-model"  position="0 0 0" scale="0.01 0.01 0.01" rotation="0 180 0">
       <a-animation attribute="rotation" to="0 180 360" dur="5000" easing='linear' repeat="indefinite"></a-animation>
     </a-collada-model>
     <a-collada-model src="#lh-model"  position="0 0 0" scale="0.01 0.01 0.01" rotation="0 180 0" material='opacity: 0.5;'>
       <a-animation attribute="rotation" to="0 180 360" dur="5000" easing='linear' repeat="indefinite"></a-animation>
     </a-collada-model>
-    </a-anchor>
-    <a-marker-camera type='pattern' url="{% static "img/patt/pattern-marker.patt" %}"></a-marker-camera>
-    <!-- <a-marker type='pattern' url="{% static "img/patt/pattern-marker.patt" %}"></a-marker> -->
-    <!-- <a-camera-static/> -->
+    </a-marker>
+    <a-entity camera></a-entity>
   </a-scene>
 
   {% include 'shared/footer.html' %}
