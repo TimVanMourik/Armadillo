@@ -18,7 +18,7 @@ def create_qr_from_text(text):
     qr = qrcode.QRCode(
      version=1,
      error_correction=qrcode.constants.ERROR_CORRECT_L,
-     box_size=3,
+     box_size=2,
      border=2,
     )
     qr.add_data(text)
@@ -40,7 +40,7 @@ def put_qr_on_marker(text, marker_in):
 
     #hard-coded position:
     new_im.paste(img, (0, 0))
-    new_im.paste(qr_img, (20 +  qr_img.size[0], 295))
+    new_im.paste(qr_img, (70 +  qr_img.size[0], 313))
 
     buffered = BytesIO()
     new_im.save(buffered, format = "png")
