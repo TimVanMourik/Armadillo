@@ -25,7 +25,7 @@ html, body {
   padding-left: 50px;
 	text-align: center;
   position: relative;
-  left: -370px;
+  left: -375px;
   width: 360px;
   border-radius: 25px;
   border: 2px solid darkOrange;
@@ -35,8 +35,8 @@ html, body {
 .button {
   /* width: 32px; */
   /* height: 32px; */
-	font-size: 40px;
-	line-height: 30px;
+	font-size: 50px;
+	line-height: 40px;
   /* background: #FFF; */
   -webkit-border-radius: 16px;
   color: darkOrange;
@@ -105,7 +105,7 @@ h2 {
 /* Loading spinner */
 
 .spinner {
-   position: absolute;
+   position: fixed;
    left: 45%;
    top: 45%;
    height:100px;
