@@ -13,7 +13,6 @@ before_install:
   - source ./bin/init-environment.bash
 install:
   - pip install -r requirements/test.txt
-  - npm install
 before_script:
   - bash ./bin/init-django.bash
 script:
