@@ -40,7 +40,7 @@ def put_qr_on_marker(text, marker_in):
 
     #hard-coded position:
     new_im.paste(img, (0, 0))
-    new_im.paste(qr_img, (70 +  qr_img.size[0], 313))
+    new_im.paste(qr_img, (60 +  qr_img.size[0], t_height - qr_img.size[0] - 135))
 
     buffered = BytesIO()
     new_im.save(buffered, format = "png")
