@@ -1,0 +1,20 @@
+sudo: false
+language: python
+python:
+  - "3.6"
+services:
+  - docker
+env:
+  - PYTHONPATH="$TRAVIS_BUILD_DIR/app/"
+  - MODE=production
+before_install:
+  - docker pull timvanmourik/armadillo-brain
+  - mv .env.sample .env
+  - source ./bin/init-environment.bash
+install:
+  - pip install -r requirements/test.txt
+  - npm install
+before_script:
+  - bash ./bin/init-django.bash
+script:
+  - bash ./bin/run-tests.bash
