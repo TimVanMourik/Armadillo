@@ -9,15 +9,29 @@
   <link rel="stylesheet" type="text/css" href="{% static "css/armadillo.css" %}">
 
 </head>
-<body class=index>
+<body class="welcome">
   <div id="mydiv">
-      <h1>Armadillo</h1>
-      <p> Welcome to the Armadillo app, which creates augmented reality <a href="https://neurovault.org/" target="_blank"> neurovault</a> images.</p>
-      <p> Try it out like this: <a href="neurovault/64604"> EXAMPLE</a> and use the marker displayed in the sidebar to see the effect. </p>
-      <small>
-        <p> Authors: Tim Van Mourik, Daniel Moyer, Dominik Krzemiński</p>
-        <p>Created at OHBM Brainhack 2018 in Singapore</p>
-      </small>
+      <div id="title">
+        <img src= "{% static 'img/marker.png' %}" /> <h1><span>AR</span>madillo</h1>
+      </div>
+      <p> Welcome to the Armadillo web app, which creates <b>A</b>ugmented <b>R</b>eality 3D brain images from <a href="https://neurovault.org/" target="_blank"> neurovault</a> data base.</p>
+      <div id="columns">
+        <div id="first">
+          <img id="collage" src= "{% static 'img/arcollage.jpg' %}" />
+        </div>
+        <div id="second">
+          Try out some of the examples below and use the marker displayed in the sidebar to see the effect:
+          <ul>
+            <li><a href="neurovault/64604"> EXAMPLE 1</a></li>
+            <li><a href="neurovault/64605"> EXAMPLE 2</a></li>
+          </ul>
+        </div>
+      </div>
+            <div id="welcomefoot">
+      <a href="https://github.com/TimVanMourik/Armadillo" target="_blank"><img src="{% static 'img/gh-icon.png' %}"/> </a>
+          <p> Authors: <i>Tim Van Mourik, Daniel Moyer, Dominik Krzemiński</i> <br />
+          Created at <b>OHBM Brainhack 2018</b> in Singapore</p>
+      </div>
   </div>
 
   </body>

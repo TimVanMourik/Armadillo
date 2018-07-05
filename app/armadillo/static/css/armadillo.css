@@ -3,25 +3,46 @@
 	left: 0;
 	top: 0;
 	position: absolute;
+  height: 80%;
 }
+
 /* Otherwise the objects are positioned weirdly */
+
 
 html, body {
   height: 100%;
 }
 
+h1 {
+  color: #ec636a;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 15px;
+  margin-left: 10px;
+}
 
+h2 {
+  color: #ec636a;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+/* ------------ Sidebar style ------------ */
 .container {
   left: 0px;
 	position: absolute;
   -webkit-transition: left 0.3s ease-in-out;
-  height: 1200px;
+  height: 100px;
 }
 
 .left-sidebar {
 	background: white;
-	padding-top: 250px;
-  padding-bottom: 100px;
+	padding-top: 210px;
+  padding-bottom: 80px;
   padding-left: 50px;
 	text-align: center;
   position: relative;
@@ -52,35 +73,99 @@ html, body {
   left: 310px;
 }
 
-h1 {
-  color: #ec636a;
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-right: 15px;
-  margin-left: 10px;
-}
+/* ------------ End of sidebar style ------------ */
 
-h2 {
-  color: #ec636a;
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-right: 15px;
-  margin-left: 10px;
+/* ------------ Welcome page style ------------ */
+.welcome {
+  background: #fffbe1;
 }
 
 #mydiv {
-    position:fixed;
-    top: 50%;
-    left: 50%;
-    width:30em;
-    height:18em;
-    margin-top: -9em;
-    margin-left: -15em;
-    border: 1px solid #ccc;
-    background-color: #f3f3f3;
+  position:fixed;
+  top: 5%;
+  left: 50%;
+  width:40em;
+  height:auto;
+  margin-left: -20em;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  border: 2px solid darkOrange;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: white;
 }
+
+#mydiv a {
+  color: darkOrange;
+}
+
+#title {
+  border-bottom: 4px dotted darkOrange;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+}
+
+#title img {
+  height: 7em;
+  width: 7em;
+  float: right;
+  position: relative;
+}
+
+#title h1 {
+  padding-top: 10px;
+  text-align: left;
+  font-size: 3em;
+}
+
+h1 span {
+  color: #ee242e;
+  font-weight: bold;
+}
+
+h2 span {
+  color: #ee242e;
+  font-weight: bold;
+}
+
+#welcomefoot {
+  font-size: small;
+  text-align: right;
+  border-top: 1px solid black;
+  padding: 1em;
+
+}
+
+#welcomefoot img {
+  height: 3em;
+  margin-bottom: 1em;
+  float: left;
+  position: relative;
+}
+
+#columns {
+    width: 100%;
+    overflow: hidden; /* will contain if #first is longer than #second */
+    padding-bottom: 10px;
+}
+#first {
+    width: 65%;
+    float:left; /* add this */
+}
+
+#collage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+#second {
+  overflow: hidden;
+  transform: translateY(50%);
+}
+
+/* ------------ End of Welcome page style ------------ */
 
 ::-webkit-scrollbar{
     width:1px;
@@ -102,7 +187,7 @@ h2 {
     border-width:0;
 }
 
-/* Loading spinner */
+/* ------------ Loading spinner  ------------ */
 
 .spinner {
    position: fixed;
@@ -139,3 +224,5 @@ h2 {
    from {transform: rotate(0deg);}
    to {transform: rotate(359deg);}
 }
+
+/* ------------ End of loading spinner  ------------ */

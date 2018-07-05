@@ -36,7 +36,7 @@
   <div class="container">
     <div class="left-sidebar">
       <p>
-        <h2>Armadillo</h2>
+        <h2><span>AR</span>madillo</h2>
       </p>
   		<div>
         Hold this marker in front of your camera:
@@ -61,6 +61,7 @@
 
   <!-- TODO: output of settings.DEBUG  -->
   <!-- <a-scene embedded arjs='trackingMethod: best; debugUIEnabled:{{settings.DEBUG}}'> -->
+  <div id="camdiv">
   <a-scene class="scene" embedded arjs='trackingMethod: best; debugUIEnabled:false'>
     <a-assets>
       <a-asset-item id="rh-model" src="/api/neurovault/{{ image_id }}/models/right" crossOrigin="anonymous"></a-asset-item>
@@ -76,6 +77,7 @@
     </a-marker>
     <a-entity camera></a-entity>
   </a-scene>
+</div>
 
   {% include 'shared/footer.html' %}
   <script>
