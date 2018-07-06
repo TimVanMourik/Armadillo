@@ -41,7 +41,8 @@ h2 {
 
 .left-sidebar {
 	background: white;
-	padding-top: 210px;
+  margin-top: -30px;
+	padding-top: 250px;
   padding-bottom: 80px;
   padding-left: 50px;
 	text-align: center;
@@ -51,6 +52,10 @@ h2 {
   border-radius: 25px;
   border: 2px solid darkOrange;
   z-index: 1;
+}
+
+.left-sidebar a {
+  color: darkOrange;
 }
 
 .button {
@@ -101,7 +106,7 @@ h2 {
 
 #title {
   border-bottom: 4px dotted darkOrange;
-  padding-bottom: 1em;
+  padding-bottom: 0.5em;
   margin-bottom: 1em;
 }
 
@@ -115,7 +120,8 @@ h2 {
 #title h1 {
   padding-top: 10px;
   text-align: left;
-  font-size: 3em;
+  font-size: 3.5em;
+  padding: 5px;
 }
 
 h1 span {
