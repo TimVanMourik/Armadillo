@@ -6,7 +6,7 @@
 Augmented Reality [madillo]
 
 #### Website
-https://armadillo-brain.herokuapp.com
+https://www.armadillobrain.app
 
 #### Presentation
 https://gitpitch.com/TimVanMourik/Armadillo
