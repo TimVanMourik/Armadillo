@@ -40,7 +40,7 @@ h2 {
 }
 
 .left-sidebar {
-	background: white;
+	background: #fae0a3;
   margin-top: -30px;
 	padding-top: 250px;
   padding-bottom: 80px;
@@ -50,12 +50,12 @@ h2 {
   left: -375px;
   width: 360px;
   border-radius: 25px;
-  border: 2px solid darkOrange;
+	border: 2px solid #f25226;
   z-index: 1;
 }
 
 .left-sidebar a {
-  color: darkOrange;
+  color: #f25226;
 }
 
 .button {
@@ -65,7 +65,7 @@ h2 {
 	line-height: 40px;
   /* background: #FFF; */
   -webkit-border-radius: 16px;
-  color: darkOrange;
+  color: #f25226;
   cursor: pointer;
   left: 10px;
   position: fixed;
@@ -82,10 +82,10 @@ h2 {
 
 /* ------------ Welcome page style ------------ */
 .welcome {
-  background: #fffbe1;
+  background: #f7a81c;
 }
 
-#mydiv {
+#welcome-box {
   position:fixed;
   top: 5%;
   left: 50%;
@@ -94,25 +94,25 @@ h2 {
   margin-left: -20em;
   border: 1px solid #ccc;
   border-radius: 25px;
-  border: 2px solid darkOrange;
+  border: 2px solid #f25226;
   padding-left: 10px;
   padding-right: 10px;
-  background: white;
+  background: #fae0a3;
 }
 
-#mydiv a {
-  color: darkOrange;
+#welcome-box a {
+  color: #f25226;
 }
 
 #title {
-  border-bottom: 4px dotted darkOrange;
+  border-bottom: 4px dotted #f25226;
   padding-bottom: 0.5em;
   margin-bottom: 1em;
 }
 
 #title img {
-  height: 7em;
-  width: 7em;
+  height: 5.5em;
+  width: 5.5em;
   float: right;
   position: relative;
 }
