@@ -1,12 +1,14 @@
-/* Reset the position of the scene: */
+/*
+Reset the position of the scene. If you touch this, it will affect
+the positioning of the AR object in the scene.
+*/
 .scene {
 	left: 0;
 	top: 0;
 	position: absolute;
-  height: 80%;
+  height: 100%;
 }
 
-/* Otherwise the objects are positioned weirdly */
 
 
 html, body {
