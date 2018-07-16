@@ -26,6 +26,7 @@
     });
   </script>
   <link rel="stylesheet" type="text/css" href="{% static "css/armadillo.css" %}">
+  <link rel="stylesheet" type="text/css" href="{% static "css/shards.css" %}">
 </head>
 
 <body class=index>
@@ -34,19 +35,18 @@
   </div>
 
   <div class="container">
-    <div class="left-sidebar">
-      <p>
+    <div class="card text-center" >
+      <div class="card-header">
         <h2><span>AR</span>madillo</h2>
-      </p>
-  		<div>
         <small>Hold this marker in front of your camera:</small>
+      </div>
+  		<div>
         <a href='/api/neurovault/{{ image_id }}/qr' target="_blank">
-          <img src='/api/neurovault/{{ image_id }}/qr' width="90%" height="90%"/>
+          <img class="d-block img-fluid" src='/api/neurovault/{{ image_id }}/qr'/>
         </a>
         <small><a href='https://neurovault.org/images/{{ image_id }}' target="_blank">NeuroVault Image</a></small>
   		</div>
       <p>
-        <center>________</center>
         Fork or star us on GitHub!
       </p>
       <a class="github-button" href="https://github.com/TimVanMourik/Armadillo" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star TimVanMourik/Armadillo on GitHub">
@@ -58,7 +58,6 @@
   	</div>
     <span class="button">+</span>
   </div>
-
   <div class="spinner"></div>
 
   <!-- TODO: output of settings.DEBUG  -->

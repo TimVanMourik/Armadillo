@@ -1,24 +1,117 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   {% include 'shared/head.html' %}
 
-  <script src="{% static "js/jquery-3.3.1.min.js" %}"></script>
+  <script src="{% static " js/jquery-3.3.1.min.js " %}"></script>
 
   <link rel="stylesheet" type="text/css" href="{% static "css/armadillo.css" %}">
+  <link rel="stylesheet" type="text/css" href="{% static "css/shards.css" %}">
+
+
 
 </head>
-<body class="welcome">
-  <div id="welcome-box">
+
+<body>
+  <!-- Welcome Section -->
+  <div class="welcome d-flex justify-content-center flex-column bg-primary">
+    <!-- Inner Wrapper -->
+    <div class="mt-auto mb-auto container">
+      <div class="row align-items-center">
+        <div class="col-md-7">
+            <h1 class="welcome-heading display-4 text-white">Armadillo</h1>
+            <p class="text-white">Welcome to the <b>ARmadillo</b> web app, which creates <b>A</b>ugmented <b>R</b>eality 3D brain images from the <a class="text-white font-weight-bold" href="https://neurovault.org/" target="_blank"> Neurovault</a> database..</p>
+            <a href="#our-services" class="btn btn-lg btn-outline-white btn-pill align-self-center">Take it for a spin</a>
+        </div>
+        <div class="col">
+          <img src="{% static 'img/brain.svg' %}" />
+        </div>
+      </div>
+    </div>
+    <!-- / Inner Wrapper -->
+  </div>
+  <!-- / Welcome Section -->
+<div class="container my-5">
+  <div class="card-deck">
+              <div class="col-md-12 col-lg-4">
+                <div class="card mb-4">
+                  <img class="card-img-top" src="images/common/card-1.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <h4 class="card-title">Example 1</h4>
+                    <a class="btn btn-primary btn-pill btn-block" href="neurovault/64604">Open Example</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-12 col-lg-4">
+                <div class="card mb-4">
+                  <img class="card-img-top" src="images/common/card-3.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <h4 class="card-title">Example 2</h4>
+                    <a class="btn btn-primary btn-pill" href="#">Read More →</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-12 col-lg-4">
+                <div class="card mb-4">
+                  <img class="card-img-top" src="images/common/card-2.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <h4 class="card-title">Example 3</h4>
+                    <a class="btn btn-primary btn-pill" href="#">Read More →</a>
+                  </div>
+                </div>
+              </div>
+              </div>
+</div>
+<div class="container py-5">
+  <div class="row align-items-center">
+    <div class="col-5">
+    </div>
+    <div class="col-7">
+      <h2>Hacked together</h2>
+      <p>Armadillo was created at the <a class="font-weight-bold" href="https://www.brainhack.org/">OHBM Brainhack 2018</a> in Singapore by a group of AR nerds.</p>
+      <div class="row">
+        <div class="col-12">
+          <a href="https://github.com/TimVanMourik">
+          <div class="card my-2">
+            <div class="card-body">
+            <h4 class="card-title">Tim Van Mourik</h4>
+            <p class="card-text">Neuroscientist, data analyst, open science/source advocate, workflow expert, visualisation nerd</p>
+          </div>
+          </div>
+          </a>
+        </div>
+        <div class="col-12">
+          <div class="card my-2">
+            <div class="card-body">
+            <h4 class="card-title">Daniel Moyer</h4>
+            <p class="card-text">Neuroscientist, data analyst, open science/source advocate, workflow expert, visualisation nerd</p>
+          </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card my-2">
+            <div class="card-body">
+            <h4 class="card-title">Dominik Krzemiński </h4>
+            <p class="card-text">Neuroscientist, data analyst, open science/source advocate, workflow expert, visualisation nerd</p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- <div id="welcome-box">
     <div id="title">
-      <img src= "{% static 'img/marker.png' %}" /> <h1><span>AR</span>madillo</h1>
+      <img src="{% static 'img/marker.png' %}" />
+      <h1><span>AR</span>madillo</h1>
     </div>
     <p> Welcome to the <b>ARmadillo</b> web app, which creates <b>A</b>ugmented <b>R</b>eality 3D brain images from the <a href="https://neurovault.org/" target="_blank"> Neurovault</a> database.</p>
     <div id="columns">
-      <div id="first">
-        <img id="collage" src= "{% static 'img/arcollage.png' %}" />
-      </div>
+
       <div id="second">
         Try out some of the examples below and use the marker displayed in the sidebar to see the effect:
         <ul>
@@ -30,13 +123,14 @@
     </div>
     <div id="welcomefoot">
       <a href="https://github.com/TimVanMourik/Armadillo" target="_blank"><img src="{% static 'img/gh-icon.png' %}"/> </a>
-      <p> Authors: <i>Tim Van Mourik, Daniel Moyer, Dominik Krzemiński</i> <br />
-        Created at <b>OHBM Brainhack 2018</b> in Singapore
+      <p> Authors: <i>Tim Van Mourik, Daniel Moyer, Dominik Krzemiński</i> <br /> Created at <b>OHBM Brainhack 2018</b> in Singapore
       </p>
     </div>
-  </div>
+  </div> -->
 
-  </body>
+
+
+</body>
 {% include 'shared/analytics.html' %}
 
 </html>
