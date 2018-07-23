@@ -9,63 +9,77 @@
 
   <link rel="stylesheet" type="text/css" href="{% static "css/armadillo.css" %}">
   <link rel="stylesheet" type="text/css" href="{% static "css/shards.css" %}">
-
-
-
 </head>
-
 <body>
-  <!-- Welcome Section -->
-  <div class="welcome d-flex justify-content-center flex-column bg-primary">
-    <!-- Inner Wrapper -->
-    <div class="mt-auto mb-auto container">
-      <div class="row align-items-center">
-        <div class="col-md-7">
-            <h1 class="welcome-heading display-4 text-white">Armadillo</h1>
-            <p class="text-white">Welcome to the <b>ARmadillo</b> web app, which creates <b>A</b>ugmented <b>R</b>eality 3D brain images from the <a class="text-white font-weight-bold" href="https://neurovault.org/" target="_blank"> Neurovault</a> database..</p>
-            <a href="neurovault/{{randomImageId}}" class="btn btn-lg btn-outline-white btn-pill align-self-center">Take it for a spin</a>
-        </div>
-        <div class="col">
-          <img src="{% static 'img/brain.svg' %}" />
+
+<!-- Welcome Section -->
+<div class="welcome d-flex justify-content-center flex-column bg-primary">
+  <!-- Inner Wrapper -->
+  <div class="mt-auto mb-auto container">
+    <div class="row align-items-center">
+      <div class="col-md-7">
+          <h1 class="welcome-heading display-4 text-white">ARmadillo</h1>
+          <p class="text-white">Welcome to the <b>ARmadillo</b> web app, which creates <b>A</b>ugmented <b>R</b>eality 3D brain images from the <a class="text-white font-weight-bold" href="https://neurovault.org/" target="_blank"> Neurovault</a> database..</p>
+          <a href="neurovault/{{randomImageId}}" class="btn btn-lg btn-outline-white btn-pill align-self-center">Take it for a spin</a>
+      </div>
+      <div class="col">
+        <img src="{% static 'img/brain.svg' %}" />
+      </div>
+    </div>
+  </div>
+  <!-- / Inner Wrapper -->
+</div>
+<!-- / Welcome Section -->
+
+<div class="container my-5">
+
+  <div class="card-deck">
+    <div class="col-md-12 col-lg-4">
+      <div class="card mb-4">
+        <img class="card-img-top" src="images/common/card-1.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title">Example 1</h4>
+          <a class="btn btn-primary btn-pill btn-block" href="neurovault/64604">Open Example</a>
         </div>
       </div>
     </div>
-    <!-- / Inner Wrapper -->
+
+    <div class="col-md-12 col-lg-4">
+      <div class="card mb-4">
+        <img class="card-img-top" src="images/common/card-2.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title">Example 2</h4>
+          <a class="btn btn-primary btn-pill btn-block" href="neurovault/31997">Open Example</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-lg-4">
+      <div class="card mb-4">
+        <img class="card-img-top" src="images/common/card-3.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title">Example 3</h4>
+          <a class="btn btn-primary btn-pill btn-block" href="neurovault/64605">Open Example</a>
+        </div>
+      </div>
+    </div>
+
   </div>
-  <!-- / Welcome Section -->
-<div class="container my-5">
-  <div class="card-deck">
-              <div class="col-md-12 col-lg-4">
-                <div class="card mb-4">
-                  <img class="card-img-top" src="images/common/card-1.jpg" alt="Card image cap">
-                  <div class="card-body">
-                    <h4 class="card-title">Example 1</h4>
-                    <a class="btn btn-primary btn-pill btn-block" href="neurovault/64604">Open Example</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-12 col-lg-4">
-                <div class="card mb-4">
-                  <img class="card-img-top" src="images/common/card-2.jpg" alt="Card image cap">
-                  <div class="card-body">
-                    <h4 class="card-title">Example 2</h4>
-                    <a class="btn btn-primary btn-pill btn-block" href="neurovault/31997">Open Example</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-12 col-lg-4">
-                <div class="card mb-4">
-                  <img class="card-img-top" src="images/common/card-3.jpg" alt="Card image cap">
-                  <div class="card-body">
-                    <h4 class="card-title">Example 3</h4>
-                    <a class="btn btn-primary btn-pill btn-block" href="neurovault/64605">Open Example</a>
-                  </div>
-                </div>
-              </div>
-              </div>
 </div>
+
+<div class="container py-5">
+  <div class="col-7">
+    <h2>Try it on your own data</h2>
+    <ol>
+      <li> Upload your surface fMRI results to NeuroVault repository.</li>
+      <li> Get your unique image code: https://neurovault.org/images/[<em>IMAGE-ID</em>]</li>
+      <li> Open the ARmadillo generator: https://www.armadillobrain.app/neurovault/[<em>IMAGE-ID</em>]</li>
+      <li> Put the marker with QR code on your poster.</li>
+      <li> Invite your audience to use their phones and wow them with the augmented reality brains!</li>
+    </ol>
+  </div>
+</div>
+
 <div class="container py-5">
   <div class="row align-items-center">
     <div class="col-5">
