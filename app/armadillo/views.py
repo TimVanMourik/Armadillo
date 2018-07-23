@@ -1,7 +1,11 @@
 from django.template.response import TemplateResponse
+import random
 
 def index(request):
-    context = {}
+    neurovaultIds = [64604, 31997, 64605];
+    context = {
+                'randomImageId': random.choice(neurovaultIds),
+                }
     return TemplateResponse(request, 'index.html', context)
 
 def image(request, image=''):
