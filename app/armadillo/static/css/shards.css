@@ -5111,10 +5111,17 @@ a.text-black:hover, a.text-black:focus {
 }
 /*# sourceMappingURL=shards.css.map */
 
+/* LIST #2 */
+#list2 { width:100%; }
+#list2 ol li { 
+  padding:8px;
+   border-left: 1px solid #999; 
+ }
+
 
 .welcome {
   background: #fff;
-  height: 80vh;
+  height: 60vh;
   overflow: hidden;
 }
 
