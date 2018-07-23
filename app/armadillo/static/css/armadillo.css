@@ -9,7 +9,10 @@ the positioning of the AR object in the scene.
   height: 100%;
 }
 
-
+.avatar-image{
+	height: 60px;
+	width: 60px;
+}
 
 html, body {
   height: 100%;
@@ -41,7 +44,7 @@ h2 {
   z-index: 1;
   margin: 0 1em 0 1em;
   width: 30%;
-	left: 30%;
+	left: 35%;
   transition: transform 0.6s;
 }
 

@@ -4,11 +4,6 @@
 
 <head>
   {% include 'shared/head.html' %}
-
-  <script src="{% static " js/jquery-3.3.1.min.js " %}"></script>
-
-  <link rel="stylesheet" type="text/css" href="{% static "css/armadillo.css" %}">
-  <link rel="stylesheet" type="text/css" href="{% static "css/shards.css" %}">
 </head>
 <body>
 
@@ -124,30 +119,32 @@
     </div>
   </div>
 </div>
-  <!-- <div id="welcome-box">
-    <div id="title">
-      <img src="{% static 'img/marker.png' %}" />
-      <h1><span>AR</span>madillo</h1>
-    </div>
-    <p> Welcome to the <b>ARmadillo</b> web app, which creates <b>A</b>ugmented <b>R</b>eality 3D brain images from the <a href="https://neurovault.org/" target="_blank"> Neurovault</a> database.</p>
-    <div id="columns">
 
-      <div id="second">
-        Try out some of the examples below and use the marker displayed in the sidebar to see the effect:
-        <ul>
-          <li><a href="neurovault/64604"> Example 1</a></li>
-          <li><a href="neurovault/31997"> Example 2</a></li>
-          <li><a href="neurovault/64605"> Example 3</a></li>
-        </ul>
-      </div>
-    </div>
-    <div id="welcomefoot">
-      <a href="https://github.com/TimVanMourik/Armadillo" target="_blank"><img src="{% static 'img/gh-icon.png' %}"/> </a>
-      <p> Authors: <i>Tim Van Mourik, Daniel Moyer, Dominik Krzemiński</i> <br /> Created at <b>OHBM Brainhack 2018</b> in Singapore
-      </p>
-    </div>
-  </div> -->
 
+<div class="container py-5">
+  <div class="col-7">
+    <h2>All contributors</h2>
+    <div id="contributors" />
+  </div>
+</div>
+
+<script>
+$.getJSON( "https://api.github.com/repos/TimVanMourik/Armadillo/contributors", function (data) {
+  var users = [];
+  $.each(data, function(key, val) {
+    console.log(val);
+    users.push( "<li>");
+    users.push( "<img class=\"avatar-image\" src=" +val.avatar_url + "/>");
+    users.push( "<a href=" + val.html_url + " target=_blank> " + val.login + "</a>");
+    users.push( "</li>");
+  });
+
+  $( "<ul/>", {
+    "class": "contributor-list",
+    html: users.join( "" )
+  }).appendTo( "#contributors" );
+});
+</script>
 
 
 </body>
