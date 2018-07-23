@@ -30,36 +30,44 @@
 </head>
 
 <body class=index>
+
   <div class="container-fluid header">
     {% include 'shared/nav.html' %}
   </div>
 
-  <div class="container">
-    <div class="card text-center" >
-      <div class="card-header">
-        <h2><span>AR</span>madillo</h2>
-        <small>Hold this marker in front of your camera:</small>
-      </div>
-  		<p>
-        <a href='/api/neurovault/{{ image_id }}/qr' target="_blank">
-          <img class="img-fluid" src='/api/neurovault/{{ image_id }}/qr'/>
-        </a>
-        <br />
-        <small><a href='https://neurovault.org/images/{{ image_id }}' target="_blank">NeuroVault Image</a></small>
-  		</p>
-      <div>
-        <div>
-          Fork or star us on GitHub!
+  <div class="container marker-window">
+    <span>
+      <div class="card text-center" >
+        <div class="card-header">
+          <h2><span>AR</span>madillo</h2>
+          Print this marker and hold this marker in front of your camera:
         </div>
-        <a class="github-button" href="https://github.com/TimVanMourik/Armadillo" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star TimVanMourik/Armadillo on GitHub">
-          Star
-        </a>
-        <a class="github-button" href="https://github.com/TimVanMourik/Armadillo/fork" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork TimVanMourik/Armadillo on GitHub">
-          Fork
-        </a>
+    		<p>
+          <a href='/api/neurovault/{{ image_id }}/qr' target="_blank">
+            <img class="img-fluid" src='/api/neurovault/{{ image_id }}/qr'/>
+          </a>
+          <br />
+          <small><a href='https://neurovault.org/images/{{ image_id }}' target="_blank">NeuroVault Image</a></small>
+    		</p>
+        <div>
+          <div>
+            Fork or star us on GitHub!
+          </div>
+          <a class="github-button" href="https://github.com/TimVanMourik/Armadillo" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star TimVanMourik/Armadillo on GitHub">
+            Star
+          </a>
+          <a class="github-button" href="https://github.com/TimVanMourik/Armadillo/fork" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork TimVanMourik/Armadillo on GitHub">
+            Fork
+          </a>
+        </div>
       </div>
-  	</div>
-    <span class="button">+</span>
+      <div class="marker-button">
+        <button type="button" class="btn btn-primary btn-pill " aria-label="Close">
+          <span aria-hidden="true">Close marker window</span>
+        </button>
+      </div>
+    </span>
+    <!-- <span class="button">+</span> -->
   </div>
   <div class="spinner"></div>
 
@@ -85,13 +93,14 @@
 
   {% include 'shared/footer.html' %}
   <script>
-    var $container = $('.container');
+    var $container = $('.marker-window');
     function toggleMenu() {
-      $container.toggleClass('slide');
+      $container.toggleClass('marker-window-closed');
     }
-    $button = $('.button');
+    $button = $('.close-marker-button');
     $button.on('click', toggleMenu);
   </script>
-  </body>
+
+</body>
 {% include 'shared/analytics.html' %}
 </html>

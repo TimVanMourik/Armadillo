@@ -34,50 +34,23 @@ h2 {
 }
 
 /* ------------ Sidebar style ------------ */
-/* .container {
-  left: 0px;
-	position: absolute;
-  -webkit-transition: left 0.3s ease-in-out;
-  height: 100px;
-} */
 
-.left-sidebar {
-	background: #fae0a3;
-  margin-top: -30px;
-	padding-top: 250px;
-  padding-bottom: 80px;
-  padding-left: 50px;
-	text-align: center;
-  position: relative;
-  left: -375px;
-  width: 360px;
-  border-radius: 25px;
-	border: 2px solid #f25226;
-  z-index: 1;
+.marker-window {
+  margin: 0 1em 0 1em;
+  width: 30%;
 }
 
-.left-sidebar a {
-  color: #f25226;
+.marker-window-closed {
+  transform: translateX(-90%);
+  transition: transform 0.1s;
 }
 
-.button {
-  /* width: 32px; */
-  /* height: 32px; */
-	font-size: 50px;
-	line-height: 40px;
-  /* background: #FFF; */
-  -webkit-border-radius: 16px;
-  color: #f25226;
-  cursor: pointer;
-  left: 10px;
-  position: fixed;
-	text-align: center;
-  top: 20px;
-	z-index: 1;
-}
-
-.slide {
-  left: 310px;
+.marker-button {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
 }
 
 /* ------------ End of sidebar style ------------ */
