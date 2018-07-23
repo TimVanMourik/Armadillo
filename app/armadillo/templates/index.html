@@ -119,14 +119,16 @@
   </div>
 </div>
 
-<div class="container py-5">
-  <div class="col-7">
-    <h2>All contributors</h2>
-    <div id="contributors" />
+
+<div id="bottomdiv">
+  <h4>All contributors</h4>
+  <div id="contributors" />
+  
   </div>
 </div>
 
 <center>
+
   <a href="https://github.com/TimVanMourik/Armadillo" target="_blank"><img src="{% static 'img/gh-icon.png' %}" width="4%"/></a>
   <h4>2018</h4>
 </center>
@@ -137,10 +139,8 @@ $.getJSON( "https://api.github.com/repos/TimVanMourik/Armadillo/contributors", f
   var users = [];
   $.each(data, function(key, val) {
     users.push( `<li>
-                  <div>
-                    <img class="avatar-image" src=${val.avatar_url}/><br />
+                    <img class="avatar-image" src=${val.avatar_url} /><br />
                     <a href=${val.html_url} target=_blank> <b>@${val.login}</b></a>
-                  </div>
                 </li>`);
   });
 
