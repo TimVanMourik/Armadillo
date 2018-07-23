@@ -19,7 +19,7 @@
     <div class="row align-items-center">
       <div class="col-md-7">
           <h1 class="welcome-heading display-4 text-white">ARmadillo</h1>
-          <p class="text-white">Welcome to the <b>ARmadillo</b> web app, which creates <b>A</b>ugmented <b>R</b>eality 3D brain images from the <a class="text-white font-weight-bold" href="https://neurovault.org/" target="_blank"> Neurovault</a> database..</p>
+          <p class="text-white">Welcome to the <b>ARmadillo</b> web app, which creates <b>A</b>ugmented <b>R</b>eality 3D brain images from the <a class="text-white font-weight-bold" href="https://neurovault.org/" target="_blank"> Neurovault</a> database.</p>
           <a href="neurovault/{{randomImageId}}" class="btn btn-lg btn-outline-white btn-pill align-self-center">Take it for a spin</a>
       </div>
       <div class="col">
@@ -36,30 +36,27 @@
   <div class="card-deck">
     <div class="col-md-12 col-lg-4">
       <div class="card mb-4">
-        <!-- <img class="card-img-top" src="images/common/card-1.jpg" alt="Card image cap"> -->
         <div class="card-body">
           <h4 class="card-title">Example 1</h4>
-          <a class="btn btn-primary btn-pill btn-block" href="neurovault/64604">Open Example</a>
+          <a class="btn btn-primary btn-pill btn-block" href="neurovault/64604">Open</a>
         </div>
       </div>
     </div>
 
     <div class="col-md-12 col-lg-4">
       <div class="card mb-4">
-        <!-- <img class="card-img-top" src="images/common/card-2.jpg" alt="Card image cap"> -->
         <div class="card-body">
           <h4 class="card-title">Example 2</h4>
-          <a class="btn btn-primary btn-pill btn-block" href="neurovault/31997">Open Example</a>
+          <a class="btn btn-primary btn-pill btn-block" href="neurovault/31997">Open</a>
         </div>
       </div>
     </div>
 
     <div class="col-md-12 col-lg-4">
       <div class="card mb-4">
-        <!-- <img class="card-img-top" src="images/common/card-3.jpg" alt="Card image cap"> -->
         <div class="card-body">
           <h4 class="card-title">Example 3</h4>
-          <a class="btn btn-primary btn-pill btn-block" href="neurovault/64605">Open Example</a>
+          <a class="btn btn-primary btn-pill btn-block" href="neurovault/64605">Open</a>
         </div>
       </div>
     </div>
@@ -68,62 +65,70 @@
 </div>
 
 <div class="container py-5">
-  <div class="col-7">
+  <div class="col-9">
     <h2>Try it on your own data</h2>
+    <div id="list2">
     <ol>
-      <li> Upload your surface fMRI results to NeuroVault repository.</li>
-      <li> Get your unique image code: https://neurovault.org/images/[<em>IMAGE-ID</em>]</li>
-      <li> Open the ARmadillo generator: https://www.armadillobrain.app/neurovault/[<em>IMAGE-ID</em>]</li>
-      <li> Put the marker with QR code on your poster.</li>
+      <li> Upload your surface fMRI results to <a href="https://neurovault.org/" target="_blank">NeuroVault</a> repository.</li>
+      <li> Get your unique image code: <b>https://neurovault.org/images/[<em>IMAGE-ID</em>]</b></li>
+      <li> Open the ARmadillo generator: <b>https://www.armadillobrain.app/neurovault/[<em>IMAGE-ID</em>] </b></li>
+      <li> Put the marker with <b>QR code</b> on your poster.</li>
       <li> Invite your audience to use their phones and wow them with the augmented reality brains!</li>
     </ol>
   </div>
-</div>
-
-<div class="container py-5">
-  <div class="row align-items-center">
-    <div class="col-5">
-    </div>
-    <div class="col-7">
-      <h2>Hacked together</h2>
-      <p>Armadillo was created at the <a class="font-weight-bold" href="https://www.brainhack.org/">OHBM Brainhack 2018</a> in Singapore by a group of AR nerds.</p>
-      <div class="row">
-        <div class="col-12">
-          <a href="https://github.com/TimVanMourik">
-            <div class="card my-2">
-              <div class="card-body">
-                <h4 class="card-title">Tim van Mourik</h4>
-                <p class="card-text">Neuroscientist, data analyst, open science/source advocate, workflow expert, visualisation nerd</p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-12">
-          <a href="https://github.com/dcmoyer">
-            <div class="card my-2">
-              <div class="card-body">
-                <h4 class="card-title">Daniel Moyer</h4>
-                <!-- Please insert your info here @dcmoyer -->
-                <p class="card-text"></p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-12">
-          <a href="https://github.com/dokato">
-            <div class="card my-2">
-              <div class="card-body">
-                <!-- Please insert your info here @dokato -->
-                <h4 class="card-title">Dominik Krzemiński </h4>
-                <p class="card-text"></p>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
+
+<center>
+  <h4>Hacked together</h4>
+  <p>Armadillo was created at the <a class="font-weight-bold" href="https://www.brainhack.org/">OHBM Brainhack 2018</a> in Singapore by a group of AR nerds.</p>
+</center>
+
+<div class="container my-5">
+  <div class="card-deck">
+    <div class="col-md-12 col-lg-4">
+      <div class="card mb-4">
+        <a href="https://github.com/TimVanMourik" target="_blank">
+          <div class="card-body">
+            <h4 class="card-title">Tim van Mourik</h4>
+            <p class="card-text">Neuroscientist, data analyst, open science/source advocate, workflow expert, visualisation nerd</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-lg-4">
+      <div class="card mb-4">
+        <a href="https://github.com/dcmoyer" target="_blank">
+          <div class="card-body">
+            <h4 class="card-title">Daniel Moyer</h4>
+            <p class="card-text">
+              Computer Science PhD student at the University of Southern California
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-lg-4">
+      <div class="card mb-4">
+          <a href="https://github.com/dokato" target="_blank">
+            <div class="card-body">
+              <h4 class="card-title">Dominik Krzemiński </h4>
+              <p class="card-text">Data Scientist, Machine Learning enthusiast, Computational Neuroscience PhD student at Cardiff University</p>
+            </div>
+          </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<center>
+  <a href="https://github.com/TimVanMourik/Armadillo" target="_blank"><img src="{% static 'img/gh-icon.png' %}" width="4%"/></a>
+  <h4>2018</h4>
+</center>
+
   <!-- <div id="welcome-box">
     <div id="title">
       <img src="{% static 'img/marker.png' %}" />
