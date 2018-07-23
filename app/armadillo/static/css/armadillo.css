@@ -46,7 +46,7 @@ h2 {
 }
 
 .marker-window-closed {
-  transform: translateY(-95%);
+  transform: translateY(-75%);
 }
 
 .close-marker-button {
