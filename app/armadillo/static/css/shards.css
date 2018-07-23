@@ -5111,10 +5111,9 @@ a.text-black:hover, a.text-black:focus {
 }
 /*# sourceMappingURL=shards.css.map */
 
-
 .welcome {
   background: #fff;
-  height: 80vh;
+  height: 60vh;
   overflow: hidden;
 }
 

@@ -10,9 +10,22 @@ the positioning of the AR object in the scene.
 }
 
 .avatar-image{
-	height: 60px;
-	width: 60px;
+	height: 80px;
+	width: 80px;
 }
+#contributors li{
+ display: inline;
+ list-style-type: none;
+ padding-right: 20px;
+}
+
+/* LIST #2 */
+#list2 { width:100%; }
+#list2 ol li {
+  padding:8px;
+   border-left: 1px solid #999;
+ }
+
 
 html, body {
   height: 100%;
