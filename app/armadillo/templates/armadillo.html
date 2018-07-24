@@ -97,6 +97,25 @@
     }
     $button = $('.close-marker-button');
     $button.on('click', toggleMenu);
+
+    function imageExists(image_url){
+      var http = new XMLHttpRequest();
+      http.open('HEAD', image_url, false);
+      http.send();
+      return (http.status != 404 && http.status != 500);
+    }
+    function loadingAlert() {
+      alert("Error while loading 3d brain model from neurovault :( Sorry!");
+    }
+     window.onload = function(){
+      setTimeout(loadAfterTime, 5000)
+    };
+    function loadAfterTime() {
+      console.log('aaaaa')
+      if (imageExists("/api/neurovault/{{ image_id }}/models/left") === false) {
+        loadingAlert();
+      }
+    }
   </script>
 
 </body>
