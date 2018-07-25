@@ -138,14 +138,14 @@ h2 {
 /* ------------ Error msg  ------------ */
 .errormsg {
    position: fixed;
-   left: 45%;
-   top: 55%;
+   left: 38%;
+   top: 70%;
    height:100px;
-   width:200px;
+   width:300px;
    margin:0px auto;
    z-index: -10;
    opacity: 0;
    color: darkOrange;
-   font-style: bold;
+   text-align: center;
 }
 /* ------------ End of error msg  ------------ */
