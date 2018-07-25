@@ -66,6 +66,9 @@
     </div>
   </div>
   <div class="spinner"></div>
+  <div class="errormsg">
+    Error while loading 3d brain model from neurovault :( Sorry!
+  </div>
 
   <!-- TODO: output of settings.DEBUG  -->
   <!-- <a-scene embedded arjs='trackingMethod: best; debugUIEnabled:{{settings.DEBUG}}'> -->
@@ -105,17 +108,18 @@
       return (http.status != 404 && http.status != 500);
     }
     function loadingAlert() {
-      alert("Error while loading 3d brain model from neurovault :( Sorry!");
+      /*alert("Error while loading 3d brain model from neurovault :( Sorry!");*/
+      $(".errormsg").animate({"opacity": "1"}, 700);
     }
-     window.onload = function(){
-      setTimeout(loadAfterTime, 5000)
-    };
     function loadAfterTime() {
-      console.log('aaaaa')
       if (imageExists("/api/neurovault/{{ image_id }}/models/left") === false) {
         loadingAlert();
       }
     }
+     window.onload = function(){
+      setTimeout(loadAfterTime, 5000)
+      setTimeout(toggleMenu, 3500)
+    };
   </script>
 
 </body>

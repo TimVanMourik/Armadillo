@@ -134,3 +134,18 @@ h2 {
 }
 
 /* ------------ End of loading spinner  ------------ */
+
+/* ------------ Error msg  ------------ */
+.errormsg {
+   position: fixed;
+   left: 45%;
+   top: 55%;
+   height:100px;
+   width:200px;
+   margin:0px auto;
+   z-index: -10;
+   opacity: 0;
+   color: darkOrange;
+   font-style: bold;
+}
+/* ------------ End of error msg  ------------ */
