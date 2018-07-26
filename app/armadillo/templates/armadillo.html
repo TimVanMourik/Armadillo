@@ -42,7 +42,7 @@
       </div>
   		<p>
         <a href='/api/neurovault/{{ image_id }}/qr' target="_blank">
-          <img class="img-fluid" src='/api/neurovault/{{ image_id }}/qr'/>
+          <img id="qrcode" class="img-fluid" src='/api/neurovault/{{ image_id }}/qr'/>
         </a>
         <br />
         <small><a href='https://neurovault.org/images/{{ image_id }}' target="_blank">NeuroVault Image</a></small>
@@ -66,6 +66,9 @@
     </div>
   </div>
   <div class="spinner"></div>
+  <div class="errormsg">
+    Some ERROR occured while loading 3D brain model from neurovault :( Sorry!
+  </div>
 
   <!-- TODO: output of settings.DEBUG  -->
   <!-- <a-scene embedded arjs='trackingMethod: best; debugUIEnabled:{{settings.DEBUG}}'> -->
@@ -97,6 +100,26 @@
     }
     $button = $('.close-marker-button');
     $button.on('click', toggleMenu);
+
+    function imageExists(image_url){
+      var http = new XMLHttpRequest();
+      http.open('HEAD', image_url, false);
+      http.send();
+      return (http.status != 404 && http.status != 500);
+    }
+    function loadingAlert() {
+      /*alert("Error while loading 3d brain model from neurovault :( Sorry!");*/
+      $(".errormsg").animate({"opacity": "1"}, 700);
+    }
+    function loadAfterTime() {
+      if (imageExists("/api/neurovault/{{ image_id }}/models/left") === false) {
+        loadingAlert();
+      }
+    }
+     window.onload = function(){
+      setTimeout(loadAfterTime, 5000)
+      setTimeout(toggleMenu, 2500)
+    };
   </script>
 
 </body>

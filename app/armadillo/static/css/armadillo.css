@@ -9,7 +9,9 @@ the positioning of the AR object in the scene.
   height: 100%;
 }
 
-
+#qrcode {
+ 	width: 350px;
+}
 
 html, body {
   height: 100%;
@@ -134,3 +136,18 @@ h2 {
 }
 
 /* ------------ End of loading spinner  ------------ */
+
+/* ------------ Error msg  ------------ */
+.errormsg {
+   position: fixed;
+   left: 38%;
+   top: 70%;
+   height:100px;
+   width:300px;
+   margin:0px auto;
+   z-index: -10;
+   opacity: 0;
+   color: darkOrange;
+   text-align: center;
+}
+/* ------------ End of error msg  ------------ */
