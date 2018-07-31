@@ -9,6 +9,7 @@ import base64
 import os
 from django.http import HttpResponse
 import nibabel as nib
+from nibabel.gifti.parse_gifti_fast import GiftiImageParser
 from nibabel.freesurfer import io as fsio
 from xml.dom.minidom import parse, parseString
 import numpy
@@ -26,6 +27,8 @@ def qr(request, image=''):
     return HttpResponse(image, content_type="image/jpeg")
 
 def hemisphere(request, image='', hemisphere=''):
+    # image=64604
+    # hemisphere='left'
     # query neurovault image
     fileUrl = f"https://neurovault.org/api/images/{image}"
     try:
@@ -34,13 +37,12 @@ def hemisphere(request, image='', hemisphere=''):
     except (urllib.error.HTTPError, ValueError):
         fileData = None
 
-    surface = fileData[f"surface_{hemisphere}_file"]
-
-    dom = parse(urllib.request.urlopen(surface))
-    zip_base64 = dom.getElementsByTagName('Data')[0].childNodes[0].data
-    zip = base64.b64decode(zip_base64.encode('ascii'))
-    unzip = zlib.decompress(zip)
-    colors = numpy.fromstring(unzip, dtype='float32')
+    # Map external file to internal file:
+    surface_file = fileData[f"surface_{hemisphere}_file"]
+    giftiParser = GiftiImageParser(buffer_size=35000000)
+    giftiParser.parse(string=urlopen(surface_file).read())
+    giftiObject = giftiParser.img
+    colors = giftiObject.darrays[0].data
 
     if hemisphere not in ["left","right"]:
         print("Bad hemisphere input")
