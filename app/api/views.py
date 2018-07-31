@@ -38,9 +38,10 @@ def hemisphere(request, image='', hemisphere=''):
         fileData = None
 
     # Map external file to internal file:
-    surface = fileData[f"surface_{hemisphere}_file"]
+    surface_file = fileData[f"surface_{hemisphere}_file"]
     giftiParser = GiftiImageParser(buffer_size=35000000)
-    giftiObject = giftiParser.parse(string=urllib.request.urlopen(surface).read())
+    giftiParser.parse(string=urlopen(surface_file).read())
+    giftiObject = giftiParser.img
     colors = giftiObject.darrays[0].data
 
     if hemisphere not in ["left","right"]:
