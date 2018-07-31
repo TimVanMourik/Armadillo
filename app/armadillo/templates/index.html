@@ -4,11 +4,6 @@
 
 <head>
   {% include 'shared/head.html' %}
-
-  <script src="{% static " js/jquery-3.3.1.min.js " %}"></script>
-
-  <link rel="stylesheet" type="text/css" href="{% static "css/armadillo.css" %}">
-  <link rel="stylesheet" type="text/css" href="{% static "css/shards.css" %}">
 </head>
 <body>
 
@@ -64,7 +59,7 @@
   </div>
 </div>
 
-<div class="container py-5">
+<div class="container my-5">
   <div class="col-9">
     <h2>Try it on your own data</h2>
     <div id="list2">
@@ -79,19 +74,17 @@
   </div>
 </div>
 
-<center>
-  <h4>Hacked together</h4>
-  <p>Armadillo was created at the <a class="font-weight-bold" href="https://www.brainhack.org/" target="_blank">OHBM Brainhack 2018</a> in Singapore by a group of AR nerds.</p>
-</center>
-
 <div class="container my-5">
+  <h3>Hacked together</h3>
+  <p>Armadillo was created at the <a class="font-weight-bold" href="https://www.brainhack.org/" target="_blank">OHBM Brainhack 2018</a> in Singapore by a group of AR nerds.</p>
+
   <div class="card-deck">
     <div class="col-md-12 col-lg-4">
       <div class="card mb-4">
         <a href="https://github.com/TimVanMourik" target="_blank">
           <div class="card-body">
             <h4 class="card-title">Tim van Mourik</h4>
-            <p class="card-text">Neuroscientist, data analyst, open science/source advocate, workflow expert, visualisation nerd</p>
+            <p class="card-text">PostDoc at the Donders Institute, the Netherlands, neuroscientist, data analyst, open science/source advocate, workflow expert, visualisation nerd</p>
           </div>
         </a>
       </div>
@@ -124,35 +117,41 @@
   </div>
 </div>
 
-<center>
-  <a href="https://github.com/TimVanMourik/Armadillo" target="_blank"><img src="{% static 'img/gh-icon.png' %}" width="4%"/></a>
-  <h4>2018</h4>
-</center>
-
-  <!-- <div id="welcome-box">
-    <div id="title">
-      <img src="{% static 'img/marker.png' %}" />
-      <h1><span>AR</span>madillo</h1>
+<div class="container right">
+  <h3>All contributors</h3>
+    <div class="card mb-12 text-center">
+      <div id="contributors">
     </div>
-    <p> Welcome to the <b>ARmadillo</b> web app, which creates <b>A</b>ugmented <b>R</b>eality 3D brain images from the <a href="https://neurovault.org/" target="_blank"> Neurovault</a> database.</p>
-    <div id="columns">
+  </div>
+</div>
 
-      <div id="second">
-        Try out some of the examples below and use the marker displayed in the sidebar to see the effect:
-        <ul>
-          <li><a href="neurovault/64604"> Example 1</a></li>
-          <li><a href="neurovault/31997"> Example 2</a></li>
-          <li><a href="neurovault/64605"> Example 3</a></li>
-        </ul>
-      </div>
-    </div>
-    <div id="welcomefoot">
-      <a href="https://github.com/TimVanMourik/Armadillo" target="_blank"><img src="{% static 'img/gh-icon.png' %}"/> </a>
-      <p> Authors: <i>Tim Van Mourik, Daniel Moyer, Dominik Krzemiński</i> <br /> Created at <b>OHBM Brainhack 2018</b> in Singapore
-      </p>
-    </div>
-  </div> -->
+<br />
 
+<div class="card text-center">
+    <a href="https://github.com/TimVanMourik/Armadillo" target="_blank">
+      <img src="{% static 'img/gh-icon.png' %}" width="4%"/>
+    </a>
+    <h4>2018</h4>
+</div>
+
+
+
+<script>
+$.getJSON( "https://api.github.com/repos/TimVanMourik/Armadillo/contributors", function (data) {
+  var users = [];
+  $.each(data, function(key, val) {
+    users.push( `<li>
+                    <img class="avatar-image" src=${val.avatar_url} /><br />
+                    <a href=${val.html_url} target=_blank> <b>@${val.login}</b></a>
+                </li>`);
+  });
+
+  $( "<ul/>", {
+    "class": "contributor-list",
+    html: users.join( "" )
+  }).appendTo( "#contributors" );
+});
+</script>
 
 
 </body>

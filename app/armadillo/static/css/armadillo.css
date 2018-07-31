@@ -12,6 +12,32 @@ the positioning of the AR object in the scene.
 #qrcode {
  	width: 350px;
 }
+.avatar-image{
+	height: 45px;
+	width: 45px;
+}
+
+#contributors li{
+ display: inline;
+ list-style-type: none;
+ padding-right: 20px;
+ float: left;
+ font-size: 0.8em;
+}
+
+#bottomdiv {
+  text-align: center;
+  height: 8em;
+  padding-left: 10em;
+  padding-right: 10em;
+}
+
+/* LIST #2 */
+#list2 { width:100%; }
+#list2 ol li {
+  padding:8px;
+   border-left: 1px solid #999;
+ }
 
 html, body {
   height: 100%;
@@ -43,7 +69,7 @@ h2 {
   z-index: 1;
   margin: 0 1em 0 1em;
   width: 30%;
-	left: 30%;
+	left: 35%;
   transition: transform 0.6s;
 }
 
