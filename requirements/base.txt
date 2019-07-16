@@ -1,8 +1,8 @@
-Django==2.0
+Django
 django-heroku
 django-livereload-server
 django-settings-export
-djangorestframework==3.7.3
+djangorestframework
 gunicorn
 matplotlib
 nibabel
