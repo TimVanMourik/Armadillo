@@ -26,44 +26,8 @@
   </script>
 </head>
 
-<body class=index>
-
-  <div class="container-fluid header">
-    {% include 'shared/nav.html' %}
-  </div>
-
-  <div class="marker-window">
-    <div class="card text-center" >
-      <div class="card-header">
-        <h2><span>AR</span>madillo</h2>
-        Print this marker and hold this marker in front of your camera:
-      </div>
-  		<p>
-        <a href='/api/neurovault/{{ image_id }}/qr' target="_blank">
-          <img id="qrcode" class="img-fluid" src='/api/neurovault/{{ image_id }}/qr'/>
-        </a>
-        <br />
-        <small><a href='https://neurovault.org/images/{{ image_id }}' target="_blank">NeuroVault Image</a></small>
-  		</p>
-      <div>
-        <div>
-          Fork or star us on GitHub!
-        </div>
-        <a class="github-button" href="https://github.com/TimVanMourik/Armadillo" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star TimVanMourik/Armadillo on GitHub">
-          Star
-        </a>
-        <a class="github-button" href="https://github.com/TimVanMourik/Armadillo/fork" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork TimVanMourik/Armadillo on GitHub">
-          Fork
-        </a>
-      </div>
-    </div>
-    <div class="marker-button">
-      <button type="button" class="btn btn-primary btn-pill close-marker-button" aria-label="Close">
-        <i class="fa fa-angle-left" aria-hidden="true"></i>
-      </button>
-    </div>
-  </div>
-  <div class="spinner"></div>
+<body class=container-fluid>
+  <div class="spinner" />
   <div class="errormsg">
     Some ERROR occured while loading 3D brain model from neurovault :( Sorry!
   </div>
@@ -71,32 +35,67 @@
   <!-- TODO: output of settings.DEBUG  -->
   <!-- <a-scene embedded arjs='trackingMethod: best; debugUIEnabled:{{settings.DEBUG}}'> -->
   <div id="camdiv">
-  <a-scene class="scene" embedded arjs='trackingMethod: best; debugUIEnabled:false'>
-    <a-assets>
-      <a-asset-item id="rh-model" src="/api/neurovault/{{ image_id }}/models/right" crossOrigin="anonymous"></a-asset-item>
-      <a-asset-item id="lh-model" src="/api/neurovault/{{ image_id }}/models/left" crossOrigin="anonymous"></a-asset-item>
-    </a-assets>
-    <a-marker model-overrider preset='custom' type='pattern' url='https://raw.githubusercontent.com/TimVanMourik/Armadillo/master/app/armadillo/static/img/patt/pattern-marker.patt'>
-    <a-collada-model src="#rh-model"  position="0 0 0" scale="0.01 0.01 0.01" rotation="0 180 0">
-      <a-animation attribute="rotation" to="0 180 360" dur="5000" easing='linear' repeat="indefinite"></a-animation>
-    </a-collada-model>
-    <a-collada-model src="#lh-model"  position="0 0 0" scale="0.01 0.01 0.01" rotation="0 180 0" material='opacity: 0.5;'>
-      <a-animation attribute="rotation" to="0 180 360" dur="5000" easing='linear' repeat="indefinite"></a-animation>
-    </a-collada-model>
-    </a-marker>
-    <a-entity camera></a-entity>
-  </a-scene>
-</div>
+    <a-scene class="scene" embedded arjs='trackingMethod: best; debugUIEnabled:false'>
+      <a-assets>
+        <a-asset-item id="rh-model" src="/api/neurovault/{{ image_id }}/models/right" crossOrigin="anonymous"></a-asset-item>
+        <a-asset-item id="lh-model" src="/api/neurovault/{{ image_id }}/models/left" crossOrigin="anonymous"></a-asset-item>
+      </a-assets>
+      <a-marker model-overrider preset='custom' type='pattern' url='https://raw.githubusercontent.com/TimVanMourik/Armadillo/master/app/armadillo/static/img/patt/pattern-marker.patt'>
+      <a-collada-model src="#rh-model"  position="0 0 0" scale="0.01 0.01 0.01" rotation="0 180 0">
+        <a-animation attribute="rotation" to="0 180 360" dur="5000" easing='linear' repeat="indefinite"></a-animation>
+      </a-collada-model>
+      <a-collada-model src="#lh-model"  position="0 0 0" scale="0.01 0.01 0.01" rotation="0 180 0" material='opacity: 0.5;'>
+        <a-animation attribute="rotation" to="0 180 360" dur="5000" easing='linear' repeat="indefinite"></a-animation>
+      </a-collada-model>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+  </div>
+
+
+  <div id="marker-container">
+    <div id="marker-window" class="container col-sm-3">
+      <div class="card text-center" >
+        <div class="card-header">
+          <h2><span>AR</span>madillo</h2>
+          Print this marker and hold this marker in front of your camera:
+        </div>
+    		<p>
+          <a href='/api/neurovault/{{ image_id }}/qr' target="_blank">
+            <img id="qrcode" class="img-fluid" src='/api/neurovault/{{ image_id }}/qr'/>
+          </a>
+          <br />
+          <small><a href='https://neurovault.org/images/{{ image_id }}' target="_blank">NeuroVault Image</a></small>
+    		</p>
+        <div>
+          <div>
+            Fork or star us on GitHub!
+          </div>
+          <a class="github-button" href="https://github.com/TimVanMourik/Armadillo" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star TimVanMourik/Armadillo on GitHub">
+            Star
+          </a>
+          <a class="github-button" href="https://github.com/TimVanMourik/Armadillo/fork" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork TimVanMourik/Armadillo on GitHub">
+            Fork
+          </a>
+        </div>
+      </div>
+      <div class="marker-button">
+        <button type="button" class="btn btn-primary btn-pill toggle-marker" aria-label="Close">
+          <i class="fa fa-angle-left" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </div>
 
   {% include 'shared/footer.html' %}
   <script>
-    var $container = $('.marker-window');
-    var $closeIcon = $('.close-marker-button');
+    var $container = $('#marker-window');
+    var $closeIcon = $('.toggle-marker');
     function toggleMenu() {
       $container.toggleClass('marker-window-closed');
       $closeIcon.toggleClass('marker-button-closed');
     }
-    $button = $('.close-marker-button');
+    $button = $('.toggle-marker');
     $button.on('click', toggleMenu);
 
     function imageExists(image_url){

@@ -32,6 +32,11 @@ the positioning of the AR object in the scene.
   padding-right: 10em;
 }
 
+#maincanvas {
+	height: 100%;
+}
+
+
 /* LIST #2 */
 #list2 { width:100%; }
 #list2 ol li {
@@ -61,23 +66,25 @@ h2 {
   margin-left: 5px;
 }
 
-/* ------------ Sidebar style ------------ */
+#marker-container {
+	position: absolute;
+  right: 0;
+	top: 0;
+	height: 100vh;
+	width: 100vw;
+}
 
-.marker-window {
-	top: 15%;
-  position: relative;
-  z-index: 1;
-  margin: 0 1em 0 1em;
-  width: 30%;
-	left: 35%;
-  transition: transform 0.6s;
+#marker-window {
+	transition: transform 0.6s;
+	margin-top: 2rem;
 }
 
 .marker-window-closed {
-  transform: translateY(-95%);
+  transform: translateY(-90%);
 }
 
-.close-marker-button {
+.toggle-marker {
+	cursor: pointer;
 	font-size: 30px;
 }
 
